@@ -1,0 +1,17 @@
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Release\Dialog Creator.exe.config
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Release\Dialog Creator.exe
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Release\Dialog Creator.pdb
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog_Creator.Form1.resources
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog_Creator.Properties.Resources.resources
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.csproj.GenerateResource.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.csproj.CoreCompileInputs.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.exe
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.pdb
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.csproj.AssemblyReference.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Release\Microsoft.WindowsAPICodePack.xml
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog Creator.csproj.CopyComplete
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Release\Dialog_Creator.About.resources
+C:\Users\User\WinFormProjects\DialogCreator\bin\Dialog Creator.exe.config
+C:\Users\User\WinFormProjects\DialogCreator\bin\Dialog Creator.exe
+C:\Users\User\WinFormProjects\DialogCreator\bin\Dialog Creator.pdb

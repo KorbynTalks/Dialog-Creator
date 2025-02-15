@@ -1,0 +1,10 @@
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Dialog Creator.exe.config
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Dialog Creator.exe
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Dialog Creator.pdb
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.csproj.AssemblyReference.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog_Creator.Form1.resources
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog_Creator.Properties.Resources.resources
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.csproj.GenerateResource.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.csproj.CoreCompileInputs.cache
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.exe
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.pdb

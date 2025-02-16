@@ -329,6 +329,26 @@ namespace Dialog_Creator
                     commandTaskDialogCustomButtonTextBox.Text,
                     messageTextTextBox.Text
                 );
+            } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
+            {
+                TaskDialogBox(
+                   instTextTextBox.Text,
+                   expandTextTextBox.Text,
+                   titlebarTextTextBox.Text,
+                   Standardicon,
+                   expandedDetailsLocation,
+                   cancelableCheckbox.Checked,
+                   collapsedSeeDetailsTextBox.Text,
+                   extendedSeeDetailsTextBox.Text,
+                   footerCheckBoxTextBox.Text,
+                   footerTextBox.Text,
+                   footerIcon,
+                   messageTextTextBox.Text,
+                   Standardbutton1,
+                   Standardbutton2,
+                   Standardbutton3,
+                   Standardbutton4
+                );
             }
         }
         // Task Dialog Links Code
@@ -470,6 +490,44 @@ namespace Dialog_Creator
             dia.FooterIcon = footerIcon;
             dia.Show();
         }
+        // Task Dialog Box
+        public static void TaskDialogBox(
+            string instructionText,
+            string expandedText,
+            string caption,
+            TaskDialogStandardIcon stanIcon,
+            TaskDialogExpandedDetailsLocation expandMode,
+            bool cancelable,
+            string collapsedLabel,
+            string expandedLabel,
+            string footerCheckboxLabel,
+            string footerLabel,
+            TaskDialogStandardIcon footerIcon,
+            string messageText,
+            TaskDialogStandardButtons stanButton1,
+            TaskDialogStandardButtons stanButton2,
+            TaskDialogStandardButtons stanButton3,
+            TaskDialogStandardButtons stanButton4
+        )
+        {
+            TaskDialog dia = new TaskDialog();
+
+            dia.Cancelable = cancelable;
+            dia.InstructionText = instructionText;
+            dia.DetailsExpanded = false;
+            dia.DetailsExpandedText = expandedText;
+            dia.StandardButtons = stanButton1 | stanButton2 | stanButton3 | stanButton4;
+            dia.ExpansionMode = expandMode;
+            dia.Caption = caption;
+            dia.Text = messageText;
+            dia.Icon = stanIcon;
+            dia.DetailsCollapsedLabel = collapsedLabel;
+            dia.DetailsExpandedLabel = expandedLabel;
+            dia.FooterCheckBoxText = footerCheckboxLabel;
+            dia.FooterText = footerLabel;
+            dia.FooterIcon = footerIcon;
+            dia.Show();
+        }
 
         private void DialogTypeDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -496,6 +554,7 @@ namespace Dialog_Creator
                 basicDialogGroup.Enabled = false;
                 linkTaskDialogCustomButtonTextBox.Enabled = false;
                 commandTaskDialogCustomButtonTextBox.Enabled = false;
+                elevatedIconCheckbox.Enabled = true;
             } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable. Custom Buttons Version)")
             {
                 taskDialogGroup.Enabled = true;
@@ -511,6 +570,23 @@ namespace Dialog_Creator
                 button2Group.Enabled = false;
                 button3Group.Enabled = false;
                 button4Group.Enabled = false;
+                elevatedIconCheckbox.Enabled = true;
+            } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
+            {
+                taskDialogGroup.Enabled = true;
+                customButtonTextTextBox.Enabled = false;
+                commandTaskDialogCustomButtonTextBox.Enabled = false;
+                linkTaskDialogCustomButtonTextBox.Enabled = false;
+                linkTextBox.Enabled = false;
+                linkText1TextBox.Enabled = false;
+                linkText2TextBox.Enabled = false;
+                basicDialogGroup.Enabled = false;
+                commandTaskDialogLinkTextBox.Enabled = false;
+                button1Group.Enabled = true;
+                button2Group.Enabled = true;
+                button3Group.Enabled = true;
+                button4Group.Enabled = true;
+                elevatedIconCheckbox.Enabled = false;
             }
         }
 

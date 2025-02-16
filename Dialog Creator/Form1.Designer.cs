@@ -237,6 +237,7 @@ namespace Dialog_Creator
             this.DialogTypeDropdown.FormattingEnabled = true;
             this.DialogTypeDropdown.Items.AddRange(new object[] {
             "Basic Dialog Box (Classic Error Message)",
+            "Task Dialog Box (More Advanced, and more customizable.)",
             "Task Dialog Box (More Advanced, and more customizable. Links Version)",
             "Task Dialog Box (More Advanced, and more customizable. Custom Buttons Version)"});
             this.DialogTypeDropdown.Location = new System.Drawing.Point(3, 12);
@@ -733,7 +734,7 @@ namespace Dialog_Creator
             this.MainContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutDialogCreatorToolStripMenuItem});
             this.MainContextMenu.Name = "MainContextMenu";
-            this.MainContextMenu.Size = new System.Drawing.Size(187, 48);
+            this.MainContextMenu.Size = new System.Drawing.Size(187, 26);
             // 
             // aboutDialogCreatorToolStripMenuItem
             // 

@@ -247,6 +247,19 @@ namespace Dialog_Creator
                 expandedDetailsLocation = TaskDialogExpandedDetailsLocation.Hide;
             }
 
+            if(linkText1TextBox.Text.Length == 0)
+            {
+                linkText1TextBox.Text = " ";
+            }
+            if(linkText2TextBox.Text.Length == 0)
+            {
+                linkText2TextBox.Text = " ";
+            }
+            if(customButtonTextTextBox.Text.Length == 0)
+            {
+                customButtonTextTextBox.Text = " ";
+            }
+
             // Classic Dialog Box
             if (DialogTypeDropdown.SelectedItem.ToString() == "Basic Dialog Box (Classic Error Message)")
             {

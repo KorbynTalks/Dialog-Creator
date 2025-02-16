@@ -1130,6 +1130,7 @@ namespace Dialog_Creator
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Dialog Creator (ver: 1.1.0)";
             this.Load += new System.EventHandler(this.Form1_Load);

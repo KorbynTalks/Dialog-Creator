@@ -369,7 +369,7 @@ namespace Dialog_Creator
             string instructionText, 
             string expandedText, 
             string caption, 
-            string Link, 
+            string Link,
             string linkText, 
             string linkText2, 
             bool useLinkIcon, 

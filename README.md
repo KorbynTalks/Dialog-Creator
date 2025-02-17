@@ -3,13 +3,14 @@ Dialog Creator is a WinForms Application that allows you to make Basic Dialog Bo
 
 Dialog Creator is inspired by ThioJoes [Modern Windows Message Box Generator](https://github.com/ThioJoe/Modern-Windows-Message-Box-Generator)
 
-![DialogCreator](https://github.com/user-attachments/assets/1728e291-2827-462d-8fe5-58a3b5ef28bf)
+![DialogCreator](https://github.com/user-attachments/assets/02fdb155-294c-4b62-b6a9-3dddc1d2ed75)
 -
-![DialogCreatorWithDialogBox](https://github.com/user-attachments/assets/a7162d8f-d324-4045-9b19-8217dc1e4de9)
+![DialogCreatorWithDialogBox](https://github.com/user-attachments/assets/e05159b5-febc-4726-9ad2-b727499b5030)
 -
-![DialogCreatorWithTaskDialogBox](https://github.com/user-attachments/assets/541ab42b-3623-4022-8427-bc54a93da85d)
+![DialogCreatorWithTaskDialogBox](https://github.com/user-attachments/assets/8c4a8b47-e743-4591-803a-ee85272d44f9)
 -
-![DialogCreatorWithTaskDialogBoxCustomButton](https://github.com/user-attachments/assets/7641651a-ca0a-4ebe-b633-02784be884c6)
+![DialogCreatorWithTaskDialogBoxCustomButton](https://github.com/user-attachments/assets/4bd541f8-b44a-445a-9d44-f576f228c72b)
+
 
 
 

@@ -36,7 +36,6 @@ namespace Dialog_Creator
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +57,7 @@ namespace Dialog_Creator
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Dialog Creator Version 1.1.0";
+            this.label1.Text = "Dialog Creator Version 1.2.0";
             // 
             // label2
             // 
@@ -100,16 +99,6 @@ namespace Dialog_Creator
             this.label5.TabIndex = 5;
             this.label5.Text = "Microsoft .NET Framework version 4.8.09037";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(157, 139);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 15);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "C# version 13.0";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -126,7 +115,6 @@ namespace Dialog_Creator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(458, 192);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -134,9 +122,12 @@ namespace Dialog_Creator
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "About";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
+            this.Load += new System.EventHandler(this.About_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +142,6 @@ namespace Dialog_Creator
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }
 }

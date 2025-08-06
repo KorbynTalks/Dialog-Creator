@@ -8,3 +8,14 @@ C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\De
 C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.csproj.CoreCompileInputs.cache
 C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.exe
 C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog Creator.pdb
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Microsoft.WindowsAPICodePack.Core.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Microsoft.WindowsAPICodePack.ExtendedLinguisticServices.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Microsoft.WindowsAPICodePack.Sensors.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\System.Windows.Forms.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\WindowsFormsIntegration.dll
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\System.Windows.Forms.xml
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\bin\Debug\WindowsFormsIntegration.xml
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog_Creator.About.resources
+C:\Users\User\WinFormProjects\DialogCreator\Dialog Creator\Dialog Creator\obj\Debug\Dialog C.E2406C56.Up2Date

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -845,7 +846,7 @@ namespace Dialog_Creator
         {
             whatsThishowToUseThisToolStripMenuItem.Checked = false;
 
-            MessageBox.Show("To use 'Link', type in any Website you want (be sure to put in https:// at the beginning!). For 'Command' you need to type in a Command Prompt Command (eg: echo Hello World! & pause). You can only choose one of these.");
+            MessageBox.Show("To use 'Link', type in any Website you want (be sure to put in https:// at the beginning!). For 'Command' you need to type in a Command Prompt Command (eg: echo Hello World! & pause). You can only choose one of these (have one empty).");
         }
 
         private void button1OKCheckbox_CheckedChanged(object sender, EventArgs e)
@@ -1209,6 +1210,1633 @@ namespace Dialog_Creator
                 button4CloseCheckbox.Checked = false;
                 button4RetryCheckbox.Checked = false;
                 button4OKCheckbox.Checked = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool selectedButtonBasicOK = false;
+            bool selectedButtonBasicYesNo = false;
+            bool selectedButtonBasicYesNoCancel = false;
+            bool selectedButtonBasicOKCancel = false;
+            bool selectedButtonBasicAbortRetryIgnore = false;
+            bool selectedButtonBasicRetryCancel = false;
+            bool selectedButtonBasicNone = false;
+            string messageText = String.Empty;
+            string titleText = String.Empty;
+            bool selectedIconError = false;
+            bool selectedIconInformation = false;
+            bool selectedIconWarning = false;
+            bool selectedIconQuestion = false;
+            bool selectedIconNone = false;
+
+            if (DialogTypeDropdown.SelectedItem.ToString() == "Basic Dialog Box (Classic Error Message)")
+            {
+                if (OKCheckbox.Checked)
+                {
+                    selectedButtonBasicOK = true;
+                }
+                else if (yesNoCheckbox.Checked)
+                {
+                    selectedButtonBasicYesNo = true;
+                }
+                else if (yesNoCancelCheckbox.Checked)
+                {
+                    selectedButtonBasicYesNoCancel = true;
+                }
+                else if (OKCancelCheckbox.Checked)
+                {
+                    selectedButtonBasicOKCancel = true;
+                }
+                else if (abortRetryIgnoreCheckbox.Checked)
+                {
+                    selectedButtonBasicAbortRetryIgnore = true;
+                }
+                else if (retryCancelCheckbox.Checked)
+                {
+                    selectedButtonBasicRetryCancel = true;
+                }
+                else if (noneCheckbox.Checked)
+                {
+                    selectedButtonBasicNone = true;
+                } else
+                {
+                    selectedButtonBasicNone = true;
+                }
+                if (messageTextTextBox.Text.Length > 0)
+                {
+                    messageText = messageTextTextBox.Text;
+                }
+                else
+                {
+                    messageText = " ";
+                }
+                if (titlebarTextTextBox.Text.Length > 0)
+                {
+                    titleText = titlebarTextTextBox.Text;
+                } else
+                {
+                    titleText = " ";
+                }
+                if(errorCheckbox.Checked)
+                {
+                    selectedIconError = true;
+                } else if(informationCheckbox.Checked)
+                {
+                    selectedIconInformation = true;
+                } else if(warningCheckbox.Checked)
+                {
+                    selectedIconWarning = true;
+                } else if(questionCheckbox.Checked)
+                {
+                    selectedIconQuestion = true;
+                } else if(noIconCheckbox.Checked)
+                {
+                    selectedIconNone = true;
+                } else
+                {
+                    selectedIconNone = true;
+                }
+
+                if (!File.Exists("./Exported.txt"))
+                {
+
+                    File.Create("./Exported.txt").Close();
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("basic");
+                        sw.WriteLine(selectedButtonBasicOK);
+                        sw.WriteLine(selectedButtonBasicYesNo);
+                        sw.WriteLine(selectedButtonBasicYesNoCancel);
+                        sw.WriteLine(selectedButtonBasicOKCancel);
+                        sw.WriteLine(selectedButtonBasicAbortRetryIgnore);
+                        sw.WriteLine(selectedButtonBasicRetryCancel);
+                        sw.WriteLine(selectedButtonBasicNone);
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                    }
+                }
+                else
+                {
+                    File.WriteAllText("./Exported.txt", String.Empty);
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("basic");
+                        sw.WriteLine(selectedButtonBasicOK);
+                        sw.WriteLine(selectedButtonBasicYesNo);
+                        sw.WriteLine(selectedButtonBasicYesNoCancel);
+                        sw.WriteLine(selectedButtonBasicOKCancel);
+                        sw.WriteLine(selectedButtonBasicAbortRetryIgnore);
+                        sw.WriteLine(selectedButtonBasicRetryCancel);
+                        sw.WriteLine(selectedButtonBasicNone);
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                    }
+                }
+
+            }
+
+            int button1 = 0;
+            int button2 = 0;
+            int button3 = 0;
+            int button4 = 0;
+            bool cancelable = false;
+            bool elevated = false;
+            string instructionText = String.Empty;
+            string captionText = String.Empty;
+            string expandedText = String.Empty;
+            string collapsedText = String.Empty;
+            string extendedText = String.Empty;
+            string footerCheckboxText = String.Empty;
+            string footerText = String.Empty;
+            int footerIcon = 0;
+            int footerSetting = 0;
+
+            string linkText1 = String.Empty;
+            string linkText2 = String.Empty;
+
+            string customButtonText = String.Empty;
+
+            if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
+            {
+
+                if (messageTextTextBox.Text.Length > 0)
+                {
+                    messageText = messageTextTextBox.Text;
+                }
+                else
+                {
+                    messageText = " ";
+                }
+                if (titlebarTextTextBox.Text.Length > 0)
+                {
+                    titleText = titlebarTextTextBox.Text;
+                }
+                else
+                {
+                    titleText = " ";
+                }
+                if (errorCheckbox.Checked)
+                {
+                    selectedIconError = true;
+                }
+                else if (informationCheckbox.Checked)
+                {
+                    selectedIconInformation = true;
+                }
+                else if (warningCheckbox.Checked)
+                {
+                    selectedIconWarning = true;
+                }
+                else if (questionCheckbox.Checked)
+                {
+                    selectedIconQuestion = true;
+                }
+                else if (noIconCheckbox.Checked)
+                {
+                    selectedIconNone = true;
+                }
+                else
+                {
+                    selectedIconNone = true;
+                }
+                if(button1OKCheckbox.Checked)
+                {
+                    button1 = 0;
+                } else if(button1YesCheckbox.Checked)
+                {
+                    button1 = 1;
+                } else if(button1NoCheckbox.Checked)
+                {
+                    button1 = 2;
+                } else if(button1CancelCheckbox.Checked)
+                {
+                    button1 = 3;
+                } else if(button1CloseCheckbox.Checked)
+                {
+                    button1 = 4;
+                } else if(button1RetryCheckbox.Checked)
+                {
+                    button1 = 5;
+                } else if(button1NoneCheckbox.Checked)
+                {
+                    button1 = 6;
+                } else
+                {
+                    button1 = 6;
+                }
+                if (button2OKCheckbox.Checked)
+                {
+                    button2 = 0;
+                }
+                else if (button2YesCheckbox.Checked)
+                {
+                    button2 = 1;
+                }
+                else if (button2NoCheckbox.Checked)
+                {
+                    button2 = 2;
+                }
+                else if (button2CancelCheckbox.Checked)
+                {
+                    button2 = 3;
+                }
+                else if (button2CloseCheckbox.Checked)
+                {
+                    button2 = 4;
+                }
+                else if (button2RetryCheckbox.Checked)
+                {
+                    button2 = 5;
+                }
+                else if (button2NoneCheckbox.Checked)
+                {
+                    button2 = 6;
+                }
+                else
+                {
+                    button2 = 6;
+                }
+                if (button3OKCheckbox.Checked)
+                {
+                    button3 = 0;
+                }
+                else if (button3YesCheckbox.Checked)
+                {
+                    button3 = 1;
+                }
+                else if (button3NoCheckbox.Checked)
+                {
+                    button3 = 2;
+                }
+                else if (button3CancelCheckbox.Checked)
+                {
+                    button3 = 3;
+                }
+                else if (button3CloseCheckbox.Checked)
+                {
+                    button3 = 4;
+                }
+                else if (button3RetryCheckbox.Checked)
+                {
+                    button3 = 5;
+                }
+                else if (button3NoneCheckbox.Checked)
+                {
+                    button3 = 6;
+                }
+                else
+                {
+                    button3 = 6;
+                }
+                if (button4OKCheckbox.Checked)
+                {
+                    button4 = 0;
+                }
+                else if (button4YesCheckbox.Checked)
+                {
+                    button4 = 1;
+                }
+                else if (button4NoCheckbox.Checked)
+                {
+                    button4 = 2;
+                }
+                else if (button4CancelCheckbox.Checked)
+                {
+                    button4 = 3;
+                }
+                else if (button4CloseCheckbox.Checked)
+                {
+                    button4 = 4;
+                }
+                else if (button4RetryCheckbox.Checked)
+                {
+                    button4 = 5;
+                }
+                else if (button4NoneCheckbox.Checked)
+                {
+                    button4 = 6;
+                }
+                else
+                {
+                    button4 = 6;
+                }
+                if(cancelableCheckbox.Checked)
+                {
+                    cancelable = true;
+                } else
+                {
+                    cancelable = false;
+                }
+                if(elevatedIconCheckbox.Checked)
+                {
+                    elevated = true;
+                } else
+                {
+                    elevated = false;
+                }
+                if (instTextTextBox.Text.Length > 0)
+                {
+                    instructionText = instTextTextBox.Text;
+                }
+                else
+                {
+                    instructionText = "";
+                }
+                if (captionTextTextBox.Text.Length > 0)
+                {
+                    captionText = captionTextTextBox.Text;
+                }
+                else
+                {
+                    captionText = "";
+                }
+                if (expandTextTextBox.Text.Length > 0)
+                {
+                    expandedText = expandTextTextBox.Text;
+                }
+                else
+                {
+                    expandedText = "";
+                }
+                if (collapsedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    collapsedText = collapsedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    collapsedText = "";
+                }
+                if (extendedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    extendedText = extendedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    extendedText = "";
+                }
+                if (footerCheckBoxTextBox.Text.Length > 0)
+                {
+                    footerCheckboxText = footerCheckBoxTextBox.Text;
+                }
+                else
+                {
+                    footerCheckboxText = "";
+                }
+                if (footerTextBox.Text.Length > 0)
+                {
+                    footerText = footerTextBox.Text;
+                }
+                else
+                {
+                    footerText = "";
+                }
+                if(footerIconError.Checked)
+                {
+                    footerIcon = 0;
+                } else if(footerIconInfo.Checked)
+                {
+                    footerIcon = 1;
+                } else if(footerIconWarning.Checked)
+                {
+                    footerIcon = 2;
+                } else if(footerIconQuestion.Checked)
+                {
+                    footerIcon = 3;
+                } else if(footerIconNone.Checked)
+                {
+                    footerIcon = 4;
+                } else
+                {
+                    footerIcon = 4;
+                }
+                if(expmdeShowFooterCheckbox.Checked)
+                {
+                    footerSetting = 0;
+                } else if(expmdeShowContentCheckbox.Checked)
+                {
+                    footerSetting = 1;
+                } else if(expmdeHideCheckbox.Checked)
+                {
+                    footerSetting = 2;
+                } else
+                {
+                    footerSetting = 0;
+                }
+
+                if (!File.Exists("./Exported.txt"))
+                {
+
+                    File.Create("./Exported.txt").Close();
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advanced");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                    }
+                }
+                else
+                {
+                    File.WriteAllText("./Exported.txt", String.Empty);
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advanced");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                    }
+                }
+            }
+
+            if (DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable. Links Version)")
+            {
+
+                if (messageTextTextBox.Text.Length > 0)
+                {
+                    messageText = messageTextTextBox.Text;
+                }
+                else
+                {
+                    messageText = " ";
+                }
+                if (titlebarTextTextBox.Text.Length > 0)
+                {
+                    titleText = titlebarTextTextBox.Text;
+                }
+                else
+                {
+                    titleText = " ";
+                }
+                if (errorCheckbox.Checked)
+                {
+                    selectedIconError = true;
+                }
+                else if (informationCheckbox.Checked)
+                {
+                    selectedIconInformation = true;
+                }
+                else if (warningCheckbox.Checked)
+                {
+                    selectedIconWarning = true;
+                }
+                else if (questionCheckbox.Checked)
+                {
+                    selectedIconQuestion = true;
+                }
+                else if (noIconCheckbox.Checked)
+                {
+                    selectedIconNone = true;
+                }
+                else
+                {
+                    selectedIconNone = true;
+                }
+                if (button1OKCheckbox.Checked)
+                {
+                    button1 = 0;
+                }
+                else if (button1YesCheckbox.Checked)
+                {
+                    button1 = 1;
+                }
+                else if (button1NoCheckbox.Checked)
+                {
+                    button1 = 2;
+                }
+                else if (button1CancelCheckbox.Checked)
+                {
+                    button1 = 3;
+                }
+                else if (button1CloseCheckbox.Checked)
+                {
+                    button1 = 4;
+                }
+                else if (button1RetryCheckbox.Checked)
+                {
+                    button1 = 5;
+                }
+                else if (button1NoneCheckbox.Checked)
+                {
+                    button1 = 6;
+                }
+                else
+                {
+                    button1 = 6;
+                }
+                if (button2OKCheckbox.Checked)
+                {
+                    button2 = 0;
+                }
+                else if (button2YesCheckbox.Checked)
+                {
+                    button2 = 1;
+                }
+                else if (button2NoCheckbox.Checked)
+                {
+                    button2 = 2;
+                }
+                else if (button2CancelCheckbox.Checked)
+                {
+                    button2 = 3;
+                }
+                else if (button2CloseCheckbox.Checked)
+                {
+                    button2 = 4;
+                }
+                else if (button2RetryCheckbox.Checked)
+                {
+                    button2 = 5;
+                }
+                else if (button2NoneCheckbox.Checked)
+                {
+                    button2 = 6;
+                }
+                else
+                {
+                    button2 = 6;
+                }
+                if (button3OKCheckbox.Checked)
+                {
+                    button3 = 0;
+                }
+                else if (button3YesCheckbox.Checked)
+                {
+                    button3 = 1;
+                }
+                else if (button3NoCheckbox.Checked)
+                {
+                    button3 = 2;
+                }
+                else if (button3CancelCheckbox.Checked)
+                {
+                    button3 = 3;
+                }
+                else if (button3CloseCheckbox.Checked)
+                {
+                    button3 = 4;
+                }
+                else if (button3RetryCheckbox.Checked)
+                {
+                    button3 = 5;
+                }
+                else if (button3NoneCheckbox.Checked)
+                {
+                    button3 = 6;
+                }
+                else
+                {
+                    button3 = 6;
+                }
+                if (button4OKCheckbox.Checked)
+                {
+                    button4 = 0;
+                }
+                else if (button4YesCheckbox.Checked)
+                {
+                    button4 = 1;
+                }
+                else if (button4NoCheckbox.Checked)
+                {
+                    button4 = 2;
+                }
+                else if (button4CancelCheckbox.Checked)
+                {
+                    button4 = 3;
+                }
+                else if (button4CloseCheckbox.Checked)
+                {
+                    button4 = 4;
+                }
+                else if (button4RetryCheckbox.Checked)
+                {
+                    button4 = 5;
+                }
+                else if (button4NoneCheckbox.Checked)
+                {
+                    button4 = 6;
+                }
+                else
+                {
+                    button4 = 6;
+                }
+                if (cancelableCheckbox.Checked)
+                {
+                    cancelable = true;
+                }
+                else
+                {
+                    cancelable = false;
+                }
+                if (elevatedIconCheckbox.Checked)
+                {
+                    elevated = true;
+                }
+                else
+                {
+                    elevated = false;
+                }
+                if (instTextTextBox.Text.Length > 0)
+                {
+                    instructionText = instTextTextBox.Text;
+                }
+                else
+                {
+                    instructionText = "";
+                }
+                if (captionTextTextBox.Text.Length > 0)
+                {
+                    captionText = captionTextTextBox.Text;
+                }
+                else
+                {
+                    captionText = "";
+                }
+                if (expandTextTextBox.Text.Length > 0)
+                {
+                    expandedText = expandTextTextBox.Text;
+                }
+                else
+                {
+                    expandedText = "";
+                }
+                if (collapsedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    collapsedText = collapsedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    collapsedText = "";
+                }
+                if (extendedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    extendedText = extendedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    extendedText = "";
+                }
+                if (footerCheckBoxTextBox.Text.Length > 0)
+                {
+                    footerCheckboxText = footerCheckBoxTextBox.Text;
+                }
+                else
+                {
+                    footerCheckboxText = "";
+                }
+                if (footerTextBox.Text.Length > 0)
+                {
+                    footerText = footerTextBox.Text;
+                }
+                else
+                {
+                    footerText = "";
+                }
+                if (footerIconError.Checked)
+                {
+                    footerIcon = 0;
+                }
+                else if (footerIconInfo.Checked)
+                {
+                    footerIcon = 1;
+                }
+                else if (footerIconWarning.Checked)
+                {
+                    footerIcon = 2;
+                }
+                else if (footerIconQuestion.Checked)
+                {
+                    footerIcon = 3;
+                }
+                else if (footerIconNone.Checked)
+                {
+                    footerIcon = 4;
+                }
+                else
+                {
+                    footerIcon = 4;
+                }
+                if (expmdeShowFooterCheckbox.Checked)
+                {
+                    footerSetting = 0;
+                }
+                else if (expmdeShowContentCheckbox.Checked)
+                {
+                    footerSetting = 1;
+                }
+                else if (expmdeHideCheckbox.Checked)
+                {
+                    footerSetting = 2;
+                }
+                else
+                {
+                    footerSetting = 0;
+                }
+                if (linkText1TextBox.Text.Length > 0)
+                {
+                    linkText1 = linkText1TextBox.Text;
+                }
+                else
+                {
+                    linkText1 = " ";
+                }
+                if (linkText2TextBox.Text.Length > 0)
+                {
+                    linkText2 = linkText2TextBox.Text;
+                }
+                else
+                {
+                    linkText2 = " ";
+                }
+
+                if (!File.Exists("./Exported.txt"))
+                {
+
+                    File.Create("./Exported.txt").Close();
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advancedlink");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                        sw.WriteLine(linkText1);
+                        sw.WriteLine(linkText2);
+                    }
+                }
+                else
+                {
+                    File.WriteAllText("./Exported.txt", String.Empty);
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advancedlink");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                        sw.WriteLine(linkText1);
+                        sw.WriteLine(linkText2);
+                    }
+                }
+            }
+
+            if (DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable. Custom Buttons Version)")
+            {
+
+                if (messageTextTextBox.Text.Length > 0)
+                {
+                    messageText = messageTextTextBox.Text;
+                }
+                else
+                {
+                    messageText = " ";
+                }
+                if (titlebarTextTextBox.Text.Length > 0)
+                {
+                    titleText = titlebarTextTextBox.Text;
+                }
+                else
+                {
+                    titleText = " ";
+                }
+                if (errorCheckbox.Checked)
+                {
+                    selectedIconError = true;
+                }
+                else if (informationCheckbox.Checked)
+                {
+                    selectedIconInformation = true;
+                }
+                else if (warningCheckbox.Checked)
+                {
+                    selectedIconWarning = true;
+                }
+                else if (questionCheckbox.Checked)
+                {
+                    selectedIconQuestion = true;
+                }
+                else if (noIconCheckbox.Checked)
+                {
+                    selectedIconNone = true;
+                }
+                else
+                {
+                    selectedIconNone = true;
+                }
+                if (customButtonTextTextBox.Text.Length > 0)
+                {
+                    customButtonText = customButtonTextTextBox.Text;
+                }
+                else
+                {
+                    customButtonText = " ";
+                }
+                if (cancelableCheckbox.Checked)
+                {
+                    cancelable = true;
+                }
+                else
+                {
+                    cancelable = false;
+                }
+                if (elevatedIconCheckbox.Checked)
+                {
+                    elevated = true;
+                }
+                else
+                {
+                    elevated = false;
+                }
+                if (instTextTextBox.Text.Length > 0)
+                {
+                    instructionText = instTextTextBox.Text;
+                }
+                else
+                {
+                    instructionText = "";
+                }
+                if (captionTextTextBox.Text.Length > 0)
+                {
+                    captionText = captionTextTextBox.Text;
+                }
+                else
+                {
+                    captionText = "";
+                }
+                if (expandTextTextBox.Text.Length > 0)
+                {
+                    expandedText = expandTextTextBox.Text;
+                }
+                else
+                {
+                    expandedText = "";
+                }
+                if (collapsedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    collapsedText = collapsedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    collapsedText = "";
+                }
+                if (extendedSeeDetailsTextBox.Text.Length > 0)
+                {
+                    extendedText = extendedSeeDetailsTextBox.Text;
+                }
+                else
+                {
+                    extendedText = "";
+                }
+                if (footerCheckBoxTextBox.Text.Length > 0)
+                {
+                    footerCheckboxText = footerCheckBoxTextBox.Text;
+                }
+                else
+                {
+                    footerCheckboxText = "";
+                }
+                if (footerTextBox.Text.Length > 0)
+                {
+                    footerText = footerTextBox.Text;
+                }
+                else
+                {
+                    footerText = "";
+                }
+                if (footerIconError.Checked)
+                {
+                    footerIcon = 0;
+                }
+                else if (footerIconInfo.Checked)
+                {
+                    footerIcon = 1;
+                }
+                else if (footerIconWarning.Checked)
+                {
+                    footerIcon = 2;
+                }
+                else if (footerIconQuestion.Checked)
+                {
+                    footerIcon = 3;
+                }
+                else if (footerIconNone.Checked)
+                {
+                    footerIcon = 4;
+                }
+                else
+                {
+                    footerIcon = 4;
+                }
+                if (expmdeShowFooterCheckbox.Checked)
+                {
+                    footerSetting = 0;
+                }
+                else if (expmdeShowContentCheckbox.Checked)
+                {
+                    footerSetting = 1;
+                }
+                else if (expmdeHideCheckbox.Checked)
+                {
+                    footerSetting = 2;
+                }
+                else
+                {
+                    footerSetting = 0;
+                }
+
+                if (!File.Exists("./Exported.txt"))
+                {
+
+                    File.Create("./Exported.txt").Close();
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advancedbutton");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                        sw.WriteLine(customButtonText);
+                    }
+                }
+                else
+                {
+                    File.WriteAllText("./Exported.txt", String.Empty);
+                    using (StreamWriter sw = File.AppendText("./Exported.txt"))
+                    {
+                        sw.WriteLine("advancedbutton");
+                        sw.WriteLine(messageText);
+                        sw.WriteLine(titleText);
+                        sw.WriteLine(selectedIconError);
+                        sw.WriteLine(selectedIconInformation);
+                        sw.WriteLine(selectedIconWarning);
+                        sw.WriteLine(selectedIconQuestion);
+                        sw.WriteLine(selectedIconNone);
+                        sw.WriteLine(button1);
+                        sw.WriteLine(button2);
+                        sw.WriteLine(button3);
+                        sw.WriteLine(button4);
+                        sw.WriteLine(cancelable);
+                        sw.WriteLine(elevated);
+                        sw.WriteLine(instructionText);
+                        sw.WriteLine(captionText);
+                        sw.WriteLine(expandedText);
+                        sw.WriteLine(collapsedText);
+                        sw.WriteLine(extendedText);
+                        sw.WriteLine(footerCheckboxText);
+                        sw.WriteLine(footerText);
+                        sw.WriteLine(footerIcon);
+                        sw.WriteLine(footerSetting);
+                        sw.WriteLine(customButtonText);
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string messageType; // 0
+            bool selectedButtonBasicOK = false; // 1
+            bool selectedButtonBasicYesNo = false; // 2
+            bool selectedButtonBasicYesNoCancel = false; // 3
+            bool selectedButtonBasicOKCancel = false; // 4
+            bool selectedButtonBasicAbortRetryIgnore = false; // 5
+            bool selectedButtonBasicRetryCancel = false; // 6
+            bool selectedButtonBasicNone = false; // 7
+            string messageText = String.Empty; // 8 Task Dialog: 1
+            string titleText = String.Empty; // 9 Task Dialog: 2
+            bool selectedIconError = false; // 10 Task Dialog: 3
+            bool selectedIconInformation = false; // 11 Task Dialog: 4
+            bool selectedIconWarning = false; // 12 Task Dialog: 5
+            bool selectedIconQuestion = false; // 13 Task Dialog: 6
+            bool selectedIconNone = false; // 14 Task Dialog: 7
+            // Why are these marked down with numbers? Because I thought there was a issue with lines in the Exported.txt file but there isnt..
+
+
+            // Task Dialog stuff
+            int button1;
+            int button2;
+            int button3;
+            int button4;
+            bool cancelable;
+            bool elevated;
+            string instructionText;
+            string captionText;
+            string expandedText;
+            string collapsedText;
+            string extendedText;
+            string footerCheckboxText;
+            string footerText;
+            int footerIcon;
+            int footerSetting;
+
+            string linkText1;
+            string linkText2;
+
+            string customButtonText;
+
+            if (!File.Exists("./Exported.txt"))
+            {
+                MessageBox.Show("Exported.txt does not exist! Put it in the same directory as the program!");
+            } else
+            {
+                string[] exportedFile = File.ReadAllLines("./Exported.txt");
+
+                if (exportedFile[0] == "basic")
+                {
+                    Console.WriteLine("Basic Message!");
+                    // Write the values to their respective variables
+                    selectedButtonBasicOK = bool.Parse(exportedFile[1]);
+                    selectedButtonBasicYesNo = bool.Parse(exportedFile[2]);
+                    selectedButtonBasicYesNoCancel = bool.Parse(exportedFile[3]);
+                    selectedButtonBasicOKCancel = bool.Parse(exportedFile[4]);
+                    selectedButtonBasicAbortRetryIgnore = bool.Parse(exportedFile[5]);
+                    selectedButtonBasicRetryCancel = bool.Parse(exportedFile[6]);
+                    selectedButtonBasicNone = bool.Parse(exportedFile[7]);
+                    messageText = exportedFile[8];
+                    titleText = exportedFile[9];
+                    selectedIconError = bool.Parse(exportedFile[10]);
+                    selectedIconInformation = bool.Parse(exportedFile[11]);
+                    selectedIconWarning = bool.Parse(exportedFile[12]);
+                    selectedIconQuestion = bool.Parse(exportedFile[13]);
+                    selectedIconNone = bool.Parse(exportedFile[14]);
+
+                    // Apply the values
+                    OKCheckbox.Checked = selectedButtonBasicOK;
+                    yesNoCheckbox.Checked = selectedButtonBasicYesNo;
+                    yesNoCancelCheckbox.Checked = selectedButtonBasicYesNoCancel;
+                    OKCancelCheckbox.Checked = selectedButtonBasicOKCancel;
+                    abortRetryIgnoreCheckbox.Checked = selectedButtonBasicAbortRetryIgnore;
+                    retryCancelCheckbox.Checked = selectedButtonBasicRetryCancel;
+                    noneCheckbox.Checked = selectedButtonBasicNone;
+                    messageTextTextBox.Text = messageText;
+                    titlebarTextTextBox.Text = titleText;
+                    errorCheckbox.Checked = selectedIconError;
+                    informationCheckbox.Checked = selectedIconInformation;
+                    warningCheckbox.Checked = selectedIconWarning;
+                    questionCheckbox.Checked = selectedIconQuestion;
+                    noneCheckbox.Checked = selectedIconNone;
+
+                } else if(exportedFile[0] == "advanced")
+                {
+                    Console.WriteLine("Advanced Message!");
+                    // Write the values to their respective variables
+                    messageText = exportedFile[1];
+                    titleText = exportedFile[2];
+                    selectedIconError = bool.Parse(exportedFile[3]);
+                    selectedIconInformation = bool.Parse(exportedFile[4]);
+                    selectedIconWarning = bool.Parse(exportedFile[5]);
+                    selectedIconQuestion = bool.Parse(exportedFile[6]);
+                    selectedIconNone = bool.Parse(exportedFile[7]);
+                    button1 = int.Parse(exportedFile[8]);
+                    button2 = int.Parse(exportedFile[9]);
+                    button3 = int.Parse(exportedFile[10]);
+                    button4 = int.Parse(exportedFile[11]);
+                    cancelable = bool.Parse(exportedFile[12]);
+                    elevated = bool.Parse(exportedFile[13]);
+                    instructionText = exportedFile[14];
+                    captionText = exportedFile[15];
+                    expandedText = exportedFile[16];
+                    collapsedText = exportedFile[17];
+                    extendedText = exportedFile[18];
+                    footerCheckboxText = exportedFile[19];
+                    footerText = exportedFile[20];
+                    footerIcon = int.Parse(exportedFile[21]);
+                    footerSetting = int.Parse(exportedFile[22]);
+
+                    // Apply the values
+                    messageTextTextBox.Text = messageText;
+                    titlebarTextTextBox.Text = titleText;
+                    errorCheckbox.Checked = selectedIconError;
+                    informationCheckbox.Checked = selectedIconInformation;
+                    warningCheckbox.Checked = selectedIconWarning;
+                    questionCheckbox.Checked = selectedIconQuestion;
+                    noneCheckbox.Checked = selectedIconNone;
+                    if(button1 == 0)
+                    {
+                        button1OKCheckbox.Checked = true;
+                    } else if(button1 == 1)
+                    {
+                        button1YesCheckbox.Checked = true;
+                    } else if(button1 == 2)
+                    {
+                        button1NoCheckbox.Checked = true;
+                    } else if(button1 == 3)
+                    {
+                        button1CancelCheckbox.Checked = true;
+                    } else if(button1 == 4)
+                    {
+                        button1CloseCheckbox.Checked = true;
+                    } else if(button1 == 5)
+                    {
+                        button1RetryCheckbox.Checked = true;
+                    } else if(button1 == 6)
+                    {
+                        button1NoneCheckbox.Checked = true;
+                    } else
+                    {
+                        button1NoneCheckbox.Checked = true;
+                    }
+                    if (button2 == 0)
+                    {
+                        button2OKCheckbox.Checked = true;
+                    }
+                    else if (button2 == 1)
+                    {
+                        button2YesCheckbox.Checked = true;
+                    }
+                    else if (button2 == 2)
+                    {
+                        button2NoCheckbox.Checked = true;
+                    }
+                    else if (button2 == 3)
+                    {
+                        button2CancelCheckbox.Checked = true;
+                    }
+                    else if (button2 == 4)
+                    {
+                        button2CloseCheckbox.Checked = true;
+                    }
+                    else if (button2 == 5)
+                    {
+                        button2RetryCheckbox.Checked = true;
+                    }
+                    else if (button2 == 6)
+                    {
+                        button2NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button2NoneCheckbox.Checked = true;
+                    }
+                    if (button3 == 0)
+                    {
+                        button3OKCheckbox.Checked = true;
+                    }
+                    else if (button3 == 1)
+                    {
+                        button3YesCheckbox.Checked = true;
+                    }
+                    else if (button3 == 2)
+                    {
+                        button3NoCheckbox.Checked = true;
+                    }
+                    else if (button3 == 3)
+                    {
+                        button3CancelCheckbox.Checked = true;
+                    }
+                    else if (button3 == 4)
+                    {
+                        button3CloseCheckbox.Checked = true;
+                    }
+                    else if (button3 == 5)
+                    {
+                        button3RetryCheckbox.Checked = true;
+                    }
+                    else if (button3 == 6)
+                    {
+                        button3NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button3NoneCheckbox.Checked = true;
+                    }
+                    if (button4 == 0)
+                    {
+                        button4OKCheckbox.Checked = true;
+                    }
+                    else if (button4 == 1)
+                    {
+                        button4YesCheckbox.Checked = true;
+                    }
+                    else if (button4 == 2)
+                    {
+                        button4NoCheckbox.Checked = true;
+                    }
+                    else if (button4 == 3)
+                    {
+                        button4CancelCheckbox.Checked = true;
+                    }
+                    else if (button4 == 4)
+                    {
+                        button4CloseCheckbox.Checked = true;
+                    }
+                    else if (button4 == 5)
+                    {
+                        button4RetryCheckbox.Checked = true;
+                    }
+                    else if (button4 == 6)
+                    {
+                        button4NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button4NoneCheckbox.Checked = true;
+                    }
+                    cancelableCheckbox.Checked = cancelable;
+                    elevatedIconCheckbox.Checked = elevated;
+                    instTextTextBox.Text = instructionText;
+                    captionTextTextBox.Text = captionText;
+                    expandTextTextBox.Text = expandedText;
+                    collapsedSeeDetailsTextBox.Text = collapsedText;
+                    extendedSeeDetailsTextBox.Text = extendedText;
+                    footerCheckBoxTextBox.Text = footerCheckboxText;
+                    footerTextBox.Text = footerText;
+                    if(footerIcon == 0)
+                    {
+                        footerIconError.Checked = true;
+                    } else if(footerIcon == 1)
+                    {
+                        footerIconInfo.Checked = true;
+                    } else if(footerIcon == 2)
+                    {
+                        footerIconWarning.Checked = true;
+                    } else if(footerIcon == 3)
+                    {
+                        footerIconQuestion.Checked = true;
+                    } else if(footerIcon == 4)
+                    {
+                        footerIconNone.Checked = true;
+                    } else
+                    {
+                        footerIconNone.Checked = true;
+                    }
+                }
+                else if (exportedFile[0] == "advancedlink")
+                {
+                    Console.WriteLine("Advanced Links Message!");
+                    // Write the values to their respective variables
+                    messageText = exportedFile[1];
+                    titleText = exportedFile[2];
+                    selectedIconError = bool.Parse(exportedFile[3]);
+                    selectedIconInformation = bool.Parse(exportedFile[4]);
+                    selectedIconWarning = bool.Parse(exportedFile[5]);
+                    selectedIconQuestion = bool.Parse(exportedFile[6]);
+                    selectedIconNone = bool.Parse(exportedFile[7]);
+                    button1 = int.Parse(exportedFile[8]);
+                    button2 = int.Parse(exportedFile[9]);
+                    button3 = int.Parse(exportedFile[10]);
+                    button4 = int.Parse(exportedFile[11]);
+                    cancelable = bool.Parse(exportedFile[12]);
+                    elevated = bool.Parse(exportedFile[13]);
+                    instructionText = exportedFile[14];
+                    captionText = exportedFile[15];
+                    expandedText = exportedFile[16];
+                    collapsedText = exportedFile[17];
+                    extendedText = exportedFile[18];
+                    footerCheckboxText = exportedFile[19];
+                    footerText = exportedFile[20];
+                    footerIcon = int.Parse(exportedFile[21]);
+                    footerSetting = int.Parse(exportedFile[22]);
+                    linkText1 = exportedFile[23];
+                    linkText2 = exportedFile[24];
+
+
+                    // Apply the values
+                    messageTextTextBox.Text = messageText;
+                    titlebarTextTextBox.Text = titleText;
+                    errorCheckbox.Checked = selectedIconError;
+                    informationCheckbox.Checked = selectedIconInformation;
+                    warningCheckbox.Checked = selectedIconWarning;
+                    questionCheckbox.Checked = selectedIconQuestion;
+                    noneCheckbox.Checked = selectedIconNone;
+                    if (button1 == 0)
+                    {
+                        button1OKCheckbox.Checked = true;
+                    }
+                    else if (button1 == 1)
+                    {
+                        button1YesCheckbox.Checked = true;
+                    }
+                    else if (button1 == 2)
+                    {
+                        button1NoCheckbox.Checked = true;
+                    }
+                    else if (button1 == 3)
+                    {
+                        button1CancelCheckbox.Checked = true;
+                    }
+                    else if (button1 == 4)
+                    {
+                        button1CloseCheckbox.Checked = true;
+                    }
+                    else if (button1 == 5)
+                    {
+                        button1RetryCheckbox.Checked = true;
+                    }
+                    else if (button1 == 6)
+                    {
+                        button1NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button1NoneCheckbox.Checked = true;
+                    }
+                    if (button2 == 0)
+                    {
+                        button2OKCheckbox.Checked = true;
+                    }
+                    else if (button2 == 1)
+                    {
+                        button2YesCheckbox.Checked = true;
+                    }
+                    else if (button2 == 2)
+                    {
+                        button2NoCheckbox.Checked = true;
+                    }
+                    else if (button2 == 3)
+                    {
+                        button2CancelCheckbox.Checked = true;
+                    }
+                    else if (button2 == 4)
+                    {
+                        button2CloseCheckbox.Checked = true;
+                    }
+                    else if (button2 == 5)
+                    {
+                        button2RetryCheckbox.Checked = true;
+                    }
+                    else if (button2 == 6)
+                    {
+                        button2NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button2NoneCheckbox.Checked = true;
+                    }
+                    if (button3 == 0)
+                    {
+                        button3OKCheckbox.Checked = true;
+                    }
+                    else if (button3 == 1)
+                    {
+                        button3YesCheckbox.Checked = true;
+                    }
+                    else if (button3 == 2)
+                    {
+                        button3NoCheckbox.Checked = true;
+                    }
+                    else if (button3 == 3)
+                    {
+                        button3CancelCheckbox.Checked = true;
+                    }
+                    else if (button3 == 4)
+                    {
+                        button3CloseCheckbox.Checked = true;
+                    }
+                    else if (button3 == 5)
+                    {
+                        button3RetryCheckbox.Checked = true;
+                    }
+                    else if (button3 == 6)
+                    {
+                        button3NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button3NoneCheckbox.Checked = true;
+                    }
+                    if (button4 == 0)
+                    {
+                        button4OKCheckbox.Checked = true;
+                    }
+                    else if (button4 == 1)
+                    {
+                        button4YesCheckbox.Checked = true;
+                    }
+                    else if (button4 == 2)
+                    {
+                        button4NoCheckbox.Checked = true;
+                    }
+                    else if (button4 == 3)
+                    {
+                        button4CancelCheckbox.Checked = true;
+                    }
+                    else if (button4 == 4)
+                    {
+                        button4CloseCheckbox.Checked = true;
+                    }
+                    else if (button4 == 5)
+                    {
+                        button4RetryCheckbox.Checked = true;
+                    }
+                    else if (button4 == 6)
+                    {
+                        button4NoneCheckbox.Checked = true;
+                    }
+                    else
+                    {
+                        button4NoneCheckbox.Checked = true;
+                    }
+                    cancelableCheckbox.Checked = cancelable;
+                    elevatedIconCheckbox.Checked = elevated;
+                    instTextTextBox.Text = instructionText;
+                    captionTextTextBox.Text = captionText;
+                    expandTextTextBox.Text = expandedText;
+                    collapsedSeeDetailsTextBox.Text = collapsedText;
+                    extendedSeeDetailsTextBox.Text = extendedText;
+                    footerCheckBoxTextBox.Text = footerCheckboxText;
+                    footerTextBox.Text = footerText;
+                    if (footerIcon == 0)
+                    {
+                        footerIconError.Checked = true;
+                    }
+                    else if (footerIcon == 1)
+                    {
+                        footerIconInfo.Checked = true;
+                    }
+                    else if (footerIcon == 2)
+                    {
+                        footerIconWarning.Checked = true;
+                    }
+                    else if (footerIcon == 3)
+                    {
+                        footerIconQuestion.Checked = true;
+                    }
+                    else if (footerIcon == 4)
+                    {
+                        footerIconNone.Checked = true;
+                    }
+                    else
+                    {
+                        footerIconNone.Checked = true;
+                    }
+
+                    linkText1TextBox.Text = linkText1;
+                    linkText2TextBox.Text = linkText2;
+                }
+                else if (exportedFile[0] == "advancedbutton")
+                {
+                    Console.WriteLine("Advanced Custom Buttons Message!");
+                    // Write the values to their respective variables
+                    messageText = exportedFile[1];
+                    titleText = exportedFile[2];
+                    selectedIconError = bool.Parse(exportedFile[3]);
+                    selectedIconInformation = bool.Parse(exportedFile[4]);
+                    selectedIconWarning = bool.Parse(exportedFile[5]);
+                    selectedIconQuestion = bool.Parse(exportedFile[6]);
+                    selectedIconNone = bool.Parse(exportedFile[7]);
+                    cancelable = bool.Parse(exportedFile[12]);
+                    elevated = bool.Parse(exportedFile[13]);
+                    instructionText = exportedFile[14];
+                    captionText = exportedFile[15];
+                    expandedText = exportedFile[16];
+                    collapsedText = exportedFile[17];
+                    extendedText = exportedFile[18];
+                    footerCheckboxText = exportedFile[19];
+                    footerText = exportedFile[20];
+                    footerIcon = int.Parse(exportedFile[21]);
+                    footerSetting = int.Parse(exportedFile[22]);
+                    customButtonText = exportedFile[23];
+
+                    // Apply the values
+                    messageTextTextBox.Text = messageText;
+                    titlebarTextTextBox.Text = titleText;
+                    errorCheckbox.Checked = selectedIconError;
+                    informationCheckbox.Checked = selectedIconInformation;
+                    warningCheckbox.Checked = selectedIconWarning;
+                    questionCheckbox.Checked = selectedIconQuestion;
+                    noneCheckbox.Checked = selectedIconNone;
+                    
+                    cancelableCheckbox.Checked = cancelable;
+                    elevatedIconCheckbox.Checked = elevated;
+                    instTextTextBox.Text = instructionText;
+                    captionTextTextBox.Text = captionText;
+                    expandTextTextBox.Text = expandedText;
+                    collapsedSeeDetailsTextBox.Text = collapsedText;
+                    extendedSeeDetailsTextBox.Text = extendedText;
+                    footerCheckBoxTextBox.Text = footerCheckboxText;
+                    footerTextBox.Text = footerText;
+                    if (footerIcon == 0)
+                    {
+                        footerIconError.Checked = true;
+                    }
+                    else if (footerIcon == 1)
+                    {
+                        footerIconInfo.Checked = true;
+                    }
+                    else if (footerIcon == 2)
+                    {
+                        footerIconWarning.Checked = true;
+                    }
+                    else if (footerIcon == 3)
+                    {
+                        footerIconQuestion.Checked = true;
+                    }
+                    else if (footerIcon == 4)
+                    {
+                        footerIconNone.Checked = true;
+                    }
+                    else
+                    {
+                        footerIconNone.Checked = true;
+                    }
+                    customButtonTextTextBox.Text = customButtonText;
+
+
+                }
+
             }
         }
     }

@@ -51,6 +51,38 @@ namespace Dialog_Creator
             this.informationCheckbox = new System.Windows.Forms.CheckBox();
             this.errorCheckbox = new System.Windows.Forms.CheckBox();
             this.taskDialogGroup = new System.Windows.Forms.GroupBox();
+            this.button4Group = new System.Windows.Forms.GroupBox();
+            this.button4NoneCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4RetryCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4CloseCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4CancelCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4NoCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4YesCheckbox = new System.Windows.Forms.CheckBox();
+            this.button4OKCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3Group = new System.Windows.Forms.GroupBox();
+            this.button3NoneCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3RetryCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3CloseCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3CancelCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3NoCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3YesCheckbox = new System.Windows.Forms.CheckBox();
+            this.button3OKCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2Group = new System.Windows.Forms.GroupBox();
+            this.button2NoneCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2RetryCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2CloseCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2CancelCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2NoCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2YesCheckbox = new System.Windows.Forms.CheckBox();
+            this.button2OKCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1Group = new System.Windows.Forms.GroupBox();
+            this.button1NoneCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1RetryCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1CloseCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1CancelCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1NoCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1YesCheckbox = new System.Windows.Forms.CheckBox();
+            this.button1OKCheckbox = new System.Windows.Forms.CheckBox();
             this.commandTaskDialogCustomButtonTextBox = new System.Windows.Forms.TextBox();
             this.whatThisLinkCommand = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.whatsThishowToUseThisToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,41 +121,18 @@ namespace Dialog_Creator
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.MainContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aboutDialogCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1Group = new System.Windows.Forms.GroupBox();
-            this.button1YesCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1OKCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1NoCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1CancelCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1CloseCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1RetryCheckbox = new System.Windows.Forms.CheckBox();
-            this.button1NoneCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2Group = new System.Windows.Forms.GroupBox();
-            this.button2NoneCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2RetryCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2CloseCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2CancelCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2NoCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2YesCheckbox = new System.Windows.Forms.CheckBox();
-            this.button2OKCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3Group = new System.Windows.Forms.GroupBox();
-            this.button3NoneCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3RetryCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3CloseCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3CancelCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3NoCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3YesCheckbox = new System.Windows.Forms.CheckBox();
-            this.button3OKCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4Group = new System.Windows.Forms.GroupBox();
-            this.button4NoneCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4RetryCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4CloseCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4CancelCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4NoCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4YesCheckbox = new System.Windows.Forms.CheckBox();
-            this.button4OKCheckbox = new System.Windows.Forms.CheckBox();
+            this.customButtonToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.ButtonActionToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.taskDialogGroup.SuspendLayout();
+            this.button4Group.SuspendLayout();
+            this.button3Group.SuspendLayout();
+            this.button2Group.SuspendLayout();
+            this.button1Group.SuspendLayout();
             this.whatThisLinkCommand.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -131,10 +140,7 @@ namespace Dialog_Creator
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.MainContextMenu.SuspendLayout();
-            this.button1Group.SuspendLayout();
-            this.button2Group.SuspendLayout();
-            this.button3Group.SuspendLayout();
-            this.button4Group.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -244,6 +250,7 @@ namespace Dialog_Creator
             this.DialogTypeDropdown.Name = "DialogTypeDropdown";
             this.DialogTypeDropdown.Size = new System.Drawing.Size(287, 21);
             this.DialogTypeDropdown.TabIndex = 1;
+            this.ButtonActionToolTip.SetToolTip(this.DialogTypeDropdown, "This is a Dropdown of what Dialogs you can make.");
             this.DialogTypeDropdown.SelectedIndexChanged += new System.EventHandler(this.DialogTypeDropdown_SelectedIndexChanged);
             // 
             // captionTextTextBox
@@ -311,9 +318,9 @@ namespace Dialog_Creator
             this.questionCheckbox.AutoSize = true;
             this.questionCheckbox.Location = new System.Drawing.Point(6, 89);
             this.questionCheckbox.Name = "questionCheckbox";
-            this.questionCheckbox.Size = new System.Drawing.Size(181, 17);
+            this.questionCheckbox.Size = new System.Drawing.Size(206, 17);
             this.questionCheckbox.TabIndex = 3;
-            this.questionCheckbox.Text = "Question (Shield for Task Dialog)";
+            this.questionCheckbox.Text = "Question (UAC Shield for Task Dialog)";
             this.questionCheckbox.UseVisualStyleBackColor = true;
             this.questionCheckbox.CheckedChanged += new System.EventHandler(this.questionCheckbox_CheckedChanged);
             // 
@@ -375,6 +382,378 @@ namespace Dialog_Creator
             this.taskDialogGroup.TabStop = false;
             this.taskDialogGroup.Text = "Task Dialog";
             // 
+            // button4Group
+            // 
+            this.button4Group.Controls.Add(this.button4NoneCheckbox);
+            this.button4Group.Controls.Add(this.button4RetryCheckbox);
+            this.button4Group.Controls.Add(this.button4CloseCheckbox);
+            this.button4Group.Controls.Add(this.button4CancelCheckbox);
+            this.button4Group.Controls.Add(this.button4NoCheckbox);
+            this.button4Group.Controls.Add(this.button4YesCheckbox);
+            this.button4Group.Controls.Add(this.button4OKCheckbox);
+            this.button4Group.Location = new System.Drawing.Point(234, 136);
+            this.button4Group.Name = "button4Group";
+            this.button4Group.Size = new System.Drawing.Size(70, 188);
+            this.button4Group.TabIndex = 10;
+            this.button4Group.TabStop = false;
+            this.button4Group.Text = "Button 4";
+            // 
+            // button4NoneCheckbox
+            // 
+            this.button4NoneCheckbox.AutoSize = true;
+            this.button4NoneCheckbox.Location = new System.Drawing.Point(7, 161);
+            this.button4NoneCheckbox.Name = "button4NoneCheckbox";
+            this.button4NoneCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button4NoneCheckbox.TabIndex = 6;
+            this.button4NoneCheckbox.Text = "None";
+            this.button4NoneCheckbox.UseVisualStyleBackColor = true;
+            this.button4NoneCheckbox.CheckedChanged += new System.EventHandler(this.button4NoneCheckbox_CheckedChanged);
+            // 
+            // button4RetryCheckbox
+            // 
+            this.button4RetryCheckbox.AutoSize = true;
+            this.button4RetryCheckbox.Location = new System.Drawing.Point(7, 138);
+            this.button4RetryCheckbox.Name = "button4RetryCheckbox";
+            this.button4RetryCheckbox.Size = new System.Drawing.Size(51, 17);
+            this.button4RetryCheckbox.TabIndex = 5;
+            this.button4RetryCheckbox.Text = "Retry";
+            this.button4RetryCheckbox.UseVisualStyleBackColor = true;
+            this.button4RetryCheckbox.CheckedChanged += new System.EventHandler(this.button4RetryCheckbox_CheckedChanged);
+            // 
+            // button4CloseCheckbox
+            // 
+            this.button4CloseCheckbox.AutoSize = true;
+            this.button4CloseCheckbox.Location = new System.Drawing.Point(7, 115);
+            this.button4CloseCheckbox.Name = "button4CloseCheckbox";
+            this.button4CloseCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button4CloseCheckbox.TabIndex = 4;
+            this.button4CloseCheckbox.Text = "Close";
+            this.button4CloseCheckbox.UseVisualStyleBackColor = true;
+            this.button4CloseCheckbox.CheckedChanged += new System.EventHandler(this.button4CloseCheckbox_CheckedChanged);
+            // 
+            // button4CancelCheckbox
+            // 
+            this.button4CancelCheckbox.AutoSize = true;
+            this.button4CancelCheckbox.Location = new System.Drawing.Point(7, 92);
+            this.button4CancelCheckbox.Name = "button4CancelCheckbox";
+            this.button4CancelCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.button4CancelCheckbox.TabIndex = 3;
+            this.button4CancelCheckbox.Text = "Cancel";
+            this.button4CancelCheckbox.UseVisualStyleBackColor = true;
+            this.button4CancelCheckbox.CheckedChanged += new System.EventHandler(this.button4CancelCheckbox_CheckedChanged);
+            // 
+            // button4NoCheckbox
+            // 
+            this.button4NoCheckbox.AutoSize = true;
+            this.button4NoCheckbox.Location = new System.Drawing.Point(7, 68);
+            this.button4NoCheckbox.Name = "button4NoCheckbox";
+            this.button4NoCheckbox.Size = new System.Drawing.Size(40, 17);
+            this.button4NoCheckbox.TabIndex = 2;
+            this.button4NoCheckbox.Text = "No";
+            this.button4NoCheckbox.UseVisualStyleBackColor = true;
+            this.button4NoCheckbox.CheckedChanged += new System.EventHandler(this.button4NoCheckbox_CheckedChanged);
+            // 
+            // button4YesCheckbox
+            // 
+            this.button4YesCheckbox.AutoSize = true;
+            this.button4YesCheckbox.Location = new System.Drawing.Point(7, 45);
+            this.button4YesCheckbox.Name = "button4YesCheckbox";
+            this.button4YesCheckbox.Size = new System.Drawing.Size(44, 17);
+            this.button4YesCheckbox.TabIndex = 1;
+            this.button4YesCheckbox.Text = "Yes";
+            this.button4YesCheckbox.UseVisualStyleBackColor = true;
+            this.button4YesCheckbox.CheckedChanged += new System.EventHandler(this.button4YesCheckbox_CheckedChanged);
+            // 
+            // button4OKCheckbox
+            // 
+            this.button4OKCheckbox.AutoSize = true;
+            this.button4OKCheckbox.Location = new System.Drawing.Point(7, 22);
+            this.button4OKCheckbox.Name = "button4OKCheckbox";
+            this.button4OKCheckbox.Size = new System.Drawing.Size(41, 17);
+            this.button4OKCheckbox.TabIndex = 0;
+            this.button4OKCheckbox.Text = "OK";
+            this.button4OKCheckbox.UseVisualStyleBackColor = true;
+            this.button4OKCheckbox.CheckedChanged += new System.EventHandler(this.button4OKCheckbox_CheckedChanged);
+            // 
+            // button3Group
+            // 
+            this.button3Group.Controls.Add(this.button3NoneCheckbox);
+            this.button3Group.Controls.Add(this.button3RetryCheckbox);
+            this.button3Group.Controls.Add(this.button3CloseCheckbox);
+            this.button3Group.Controls.Add(this.button3CancelCheckbox);
+            this.button3Group.Controls.Add(this.button3NoCheckbox);
+            this.button3Group.Controls.Add(this.button3YesCheckbox);
+            this.button3Group.Controls.Add(this.button3OKCheckbox);
+            this.button3Group.Location = new System.Drawing.Point(158, 136);
+            this.button3Group.Name = "button3Group";
+            this.button3Group.Size = new System.Drawing.Size(70, 188);
+            this.button3Group.TabIndex = 9;
+            this.button3Group.TabStop = false;
+            this.button3Group.Text = "Button 3";
+            // 
+            // button3NoneCheckbox
+            // 
+            this.button3NoneCheckbox.AutoSize = true;
+            this.button3NoneCheckbox.Location = new System.Drawing.Point(7, 161);
+            this.button3NoneCheckbox.Name = "button3NoneCheckbox";
+            this.button3NoneCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button3NoneCheckbox.TabIndex = 6;
+            this.button3NoneCheckbox.Text = "None";
+            this.button3NoneCheckbox.UseVisualStyleBackColor = true;
+            this.button3NoneCheckbox.CheckedChanged += new System.EventHandler(this.button3NoneCheckbox_CheckedChanged);
+            // 
+            // button3RetryCheckbox
+            // 
+            this.button3RetryCheckbox.AutoSize = true;
+            this.button3RetryCheckbox.Location = new System.Drawing.Point(7, 138);
+            this.button3RetryCheckbox.Name = "button3RetryCheckbox";
+            this.button3RetryCheckbox.Size = new System.Drawing.Size(51, 17);
+            this.button3RetryCheckbox.TabIndex = 5;
+            this.button3RetryCheckbox.Text = "Retry";
+            this.button3RetryCheckbox.UseVisualStyleBackColor = true;
+            this.button3RetryCheckbox.CheckedChanged += new System.EventHandler(this.button3RetryCheckbox_CheckedChanged);
+            // 
+            // button3CloseCheckbox
+            // 
+            this.button3CloseCheckbox.AutoSize = true;
+            this.button3CloseCheckbox.Location = new System.Drawing.Point(7, 115);
+            this.button3CloseCheckbox.Name = "button3CloseCheckbox";
+            this.button3CloseCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button3CloseCheckbox.TabIndex = 4;
+            this.button3CloseCheckbox.Text = "Close";
+            this.button3CloseCheckbox.UseVisualStyleBackColor = true;
+            this.button3CloseCheckbox.CheckedChanged += new System.EventHandler(this.button3CloseCheckbox_CheckedChanged);
+            // 
+            // button3CancelCheckbox
+            // 
+            this.button3CancelCheckbox.AutoSize = true;
+            this.button3CancelCheckbox.Location = new System.Drawing.Point(7, 92);
+            this.button3CancelCheckbox.Name = "button3CancelCheckbox";
+            this.button3CancelCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.button3CancelCheckbox.TabIndex = 3;
+            this.button3CancelCheckbox.Text = "Cancel";
+            this.button3CancelCheckbox.UseVisualStyleBackColor = true;
+            this.button3CancelCheckbox.CheckedChanged += new System.EventHandler(this.button3CancelCheckbox_CheckedChanged);
+            // 
+            // button3NoCheckbox
+            // 
+            this.button3NoCheckbox.AutoSize = true;
+            this.button3NoCheckbox.Location = new System.Drawing.Point(7, 68);
+            this.button3NoCheckbox.Name = "button3NoCheckbox";
+            this.button3NoCheckbox.Size = new System.Drawing.Size(40, 17);
+            this.button3NoCheckbox.TabIndex = 2;
+            this.button3NoCheckbox.Text = "No";
+            this.button3NoCheckbox.UseVisualStyleBackColor = true;
+            this.button3NoCheckbox.CheckedChanged += new System.EventHandler(this.button3NoCheckbox_CheckedChanged);
+            // 
+            // button3YesCheckbox
+            // 
+            this.button3YesCheckbox.AutoSize = true;
+            this.button3YesCheckbox.Location = new System.Drawing.Point(7, 45);
+            this.button3YesCheckbox.Name = "button3YesCheckbox";
+            this.button3YesCheckbox.Size = new System.Drawing.Size(44, 17);
+            this.button3YesCheckbox.TabIndex = 1;
+            this.button3YesCheckbox.Text = "Yes";
+            this.button3YesCheckbox.UseVisualStyleBackColor = true;
+            this.button3YesCheckbox.CheckedChanged += new System.EventHandler(this.button3YesCheckbox_CheckedChanged);
+            // 
+            // button3OKCheckbox
+            // 
+            this.button3OKCheckbox.AutoSize = true;
+            this.button3OKCheckbox.Location = new System.Drawing.Point(7, 22);
+            this.button3OKCheckbox.Name = "button3OKCheckbox";
+            this.button3OKCheckbox.Size = new System.Drawing.Size(41, 17);
+            this.button3OKCheckbox.TabIndex = 0;
+            this.button3OKCheckbox.Text = "OK";
+            this.button3OKCheckbox.UseVisualStyleBackColor = true;
+            this.button3OKCheckbox.CheckedChanged += new System.EventHandler(this.button3OKCheckbox_CheckedChanged);
+            // 
+            // button2Group
+            // 
+            this.button2Group.Controls.Add(this.button2NoneCheckbox);
+            this.button2Group.Controls.Add(this.button2RetryCheckbox);
+            this.button2Group.Controls.Add(this.button2CloseCheckbox);
+            this.button2Group.Controls.Add(this.button2CancelCheckbox);
+            this.button2Group.Controls.Add(this.button2NoCheckbox);
+            this.button2Group.Controls.Add(this.button2YesCheckbox);
+            this.button2Group.Controls.Add(this.button2OKCheckbox);
+            this.button2Group.Location = new System.Drawing.Point(82, 136);
+            this.button2Group.Name = "button2Group";
+            this.button2Group.Size = new System.Drawing.Size(70, 188);
+            this.button2Group.TabIndex = 8;
+            this.button2Group.TabStop = false;
+            this.button2Group.Text = "Button 2";
+            // 
+            // button2NoneCheckbox
+            // 
+            this.button2NoneCheckbox.AutoSize = true;
+            this.button2NoneCheckbox.Location = new System.Drawing.Point(7, 161);
+            this.button2NoneCheckbox.Name = "button2NoneCheckbox";
+            this.button2NoneCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button2NoneCheckbox.TabIndex = 6;
+            this.button2NoneCheckbox.Text = "None";
+            this.button2NoneCheckbox.UseVisualStyleBackColor = true;
+            this.button2NoneCheckbox.CheckedChanged += new System.EventHandler(this.button2NoneCheckbox_CheckedChanged);
+            // 
+            // button2RetryCheckbox
+            // 
+            this.button2RetryCheckbox.AutoSize = true;
+            this.button2RetryCheckbox.Location = new System.Drawing.Point(7, 138);
+            this.button2RetryCheckbox.Name = "button2RetryCheckbox";
+            this.button2RetryCheckbox.Size = new System.Drawing.Size(51, 17);
+            this.button2RetryCheckbox.TabIndex = 5;
+            this.button2RetryCheckbox.Text = "Retry";
+            this.button2RetryCheckbox.UseVisualStyleBackColor = true;
+            this.button2RetryCheckbox.CheckedChanged += new System.EventHandler(this.button2RetryCheckbox_CheckedChanged);
+            // 
+            // button2CloseCheckbox
+            // 
+            this.button2CloseCheckbox.AutoSize = true;
+            this.button2CloseCheckbox.Location = new System.Drawing.Point(7, 115);
+            this.button2CloseCheckbox.Name = "button2CloseCheckbox";
+            this.button2CloseCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button2CloseCheckbox.TabIndex = 4;
+            this.button2CloseCheckbox.Text = "Close";
+            this.button2CloseCheckbox.UseVisualStyleBackColor = true;
+            this.button2CloseCheckbox.CheckedChanged += new System.EventHandler(this.button2CloseCheckbox_CheckedChanged);
+            // 
+            // button2CancelCheckbox
+            // 
+            this.button2CancelCheckbox.AutoSize = true;
+            this.button2CancelCheckbox.Location = new System.Drawing.Point(7, 92);
+            this.button2CancelCheckbox.Name = "button2CancelCheckbox";
+            this.button2CancelCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.button2CancelCheckbox.TabIndex = 3;
+            this.button2CancelCheckbox.Text = "Cancel";
+            this.button2CancelCheckbox.UseVisualStyleBackColor = true;
+            this.button2CancelCheckbox.CheckedChanged += new System.EventHandler(this.button2CancelCheckbox_CheckedChanged);
+            // 
+            // button2NoCheckbox
+            // 
+            this.button2NoCheckbox.AutoSize = true;
+            this.button2NoCheckbox.Location = new System.Drawing.Point(7, 68);
+            this.button2NoCheckbox.Name = "button2NoCheckbox";
+            this.button2NoCheckbox.Size = new System.Drawing.Size(40, 17);
+            this.button2NoCheckbox.TabIndex = 2;
+            this.button2NoCheckbox.Text = "No";
+            this.button2NoCheckbox.UseVisualStyleBackColor = true;
+            this.button2NoCheckbox.CheckedChanged += new System.EventHandler(this.button2NoCheckbox_CheckedChanged);
+            // 
+            // button2YesCheckbox
+            // 
+            this.button2YesCheckbox.AutoSize = true;
+            this.button2YesCheckbox.Location = new System.Drawing.Point(7, 45);
+            this.button2YesCheckbox.Name = "button2YesCheckbox";
+            this.button2YesCheckbox.Size = new System.Drawing.Size(44, 17);
+            this.button2YesCheckbox.TabIndex = 1;
+            this.button2YesCheckbox.Text = "Yes";
+            this.button2YesCheckbox.UseVisualStyleBackColor = true;
+            this.button2YesCheckbox.CheckedChanged += new System.EventHandler(this.button2YesCheckbox_CheckedChanged);
+            // 
+            // button2OKCheckbox
+            // 
+            this.button2OKCheckbox.AutoSize = true;
+            this.button2OKCheckbox.Location = new System.Drawing.Point(7, 22);
+            this.button2OKCheckbox.Name = "button2OKCheckbox";
+            this.button2OKCheckbox.Size = new System.Drawing.Size(41, 17);
+            this.button2OKCheckbox.TabIndex = 0;
+            this.button2OKCheckbox.Text = "OK";
+            this.button2OKCheckbox.UseVisualStyleBackColor = true;
+            this.button2OKCheckbox.CheckedChanged += new System.EventHandler(this.button2OKCheckbox_CheckedChanged);
+            // 
+            // button1Group
+            // 
+            this.button1Group.Controls.Add(this.button1NoneCheckbox);
+            this.button1Group.Controls.Add(this.button1RetryCheckbox);
+            this.button1Group.Controls.Add(this.button1CloseCheckbox);
+            this.button1Group.Controls.Add(this.button1CancelCheckbox);
+            this.button1Group.Controls.Add(this.button1NoCheckbox);
+            this.button1Group.Controls.Add(this.button1YesCheckbox);
+            this.button1Group.Controls.Add(this.button1OKCheckbox);
+            this.button1Group.Location = new System.Drawing.Point(6, 136);
+            this.button1Group.Name = "button1Group";
+            this.button1Group.Size = new System.Drawing.Size(70, 188);
+            this.button1Group.TabIndex = 7;
+            this.button1Group.TabStop = false;
+            this.button1Group.Text = "Button 1";
+            // 
+            // button1NoneCheckbox
+            // 
+            this.button1NoneCheckbox.AutoSize = true;
+            this.button1NoneCheckbox.Location = new System.Drawing.Point(7, 161);
+            this.button1NoneCheckbox.Name = "button1NoneCheckbox";
+            this.button1NoneCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button1NoneCheckbox.TabIndex = 6;
+            this.button1NoneCheckbox.Text = "None";
+            this.button1NoneCheckbox.UseVisualStyleBackColor = true;
+            this.button1NoneCheckbox.CheckedChanged += new System.EventHandler(this.button1NoneCheckbox_CheckedChanged);
+            // 
+            // button1RetryCheckbox
+            // 
+            this.button1RetryCheckbox.AutoSize = true;
+            this.button1RetryCheckbox.Location = new System.Drawing.Point(7, 138);
+            this.button1RetryCheckbox.Name = "button1RetryCheckbox";
+            this.button1RetryCheckbox.Size = new System.Drawing.Size(51, 17);
+            this.button1RetryCheckbox.TabIndex = 5;
+            this.button1RetryCheckbox.Text = "Retry";
+            this.button1RetryCheckbox.UseVisualStyleBackColor = true;
+            this.button1RetryCheckbox.CheckedChanged += new System.EventHandler(this.button1RetryCheckbox_CheckedChanged);
+            // 
+            // button1CloseCheckbox
+            // 
+            this.button1CloseCheckbox.AutoSize = true;
+            this.button1CloseCheckbox.Location = new System.Drawing.Point(7, 115);
+            this.button1CloseCheckbox.Name = "button1CloseCheckbox";
+            this.button1CloseCheckbox.Size = new System.Drawing.Size(52, 17);
+            this.button1CloseCheckbox.TabIndex = 4;
+            this.button1CloseCheckbox.Text = "Close";
+            this.button1CloseCheckbox.UseVisualStyleBackColor = true;
+            this.button1CloseCheckbox.CheckedChanged += new System.EventHandler(this.button1CloseCheckbox_CheckedChanged);
+            // 
+            // button1CancelCheckbox
+            // 
+            this.button1CancelCheckbox.AutoSize = true;
+            this.button1CancelCheckbox.Location = new System.Drawing.Point(7, 92);
+            this.button1CancelCheckbox.Name = "button1CancelCheckbox";
+            this.button1CancelCheckbox.Size = new System.Drawing.Size(59, 17);
+            this.button1CancelCheckbox.TabIndex = 3;
+            this.button1CancelCheckbox.Text = "Cancel";
+            this.button1CancelCheckbox.UseVisualStyleBackColor = true;
+            this.button1CancelCheckbox.CheckedChanged += new System.EventHandler(this.button1CancelCheckbox_CheckedChanged);
+            // 
+            // button1NoCheckbox
+            // 
+            this.button1NoCheckbox.AutoSize = true;
+            this.button1NoCheckbox.Location = new System.Drawing.Point(7, 68);
+            this.button1NoCheckbox.Name = "button1NoCheckbox";
+            this.button1NoCheckbox.Size = new System.Drawing.Size(40, 17);
+            this.button1NoCheckbox.TabIndex = 2;
+            this.button1NoCheckbox.Text = "No";
+            this.button1NoCheckbox.UseVisualStyleBackColor = true;
+            this.button1NoCheckbox.CheckedChanged += new System.EventHandler(this.button1NoCheckbox_CheckedChanged);
+            // 
+            // button1YesCheckbox
+            // 
+            this.button1YesCheckbox.AutoSize = true;
+            this.button1YesCheckbox.Location = new System.Drawing.Point(7, 45);
+            this.button1YesCheckbox.Name = "button1YesCheckbox";
+            this.button1YesCheckbox.Size = new System.Drawing.Size(44, 17);
+            this.button1YesCheckbox.TabIndex = 1;
+            this.button1YesCheckbox.Text = "Yes";
+            this.button1YesCheckbox.UseVisualStyleBackColor = true;
+            this.button1YesCheckbox.CheckedChanged += new System.EventHandler(this.button1YesCheckbox_CheckedChanged);
+            // 
+            // button1OKCheckbox
+            // 
+            this.button1OKCheckbox.AutoSize = true;
+            this.button1OKCheckbox.Location = new System.Drawing.Point(7, 22);
+            this.button1OKCheckbox.Name = "button1OKCheckbox";
+            this.button1OKCheckbox.Size = new System.Drawing.Size(41, 17);
+            this.button1OKCheckbox.TabIndex = 0;
+            this.button1OKCheckbox.Text = "OK";
+            this.button1OKCheckbox.UseVisualStyleBackColor = true;
+            this.button1OKCheckbox.CheckedChanged += new System.EventHandler(this.button1OKCheckbox_CheckedChanged);
+            // 
             // commandTaskDialogCustomButtonTextBox
             // 
             this.commandTaskDialogCustomButtonTextBox.ContextMenuStrip = this.whatThisLinkCommand;
@@ -383,19 +762,21 @@ namespace Dialog_Creator
             this.commandTaskDialogCustomButtonTextBox.Size = new System.Drawing.Size(274, 20);
             this.commandTaskDialogCustomButtonTextBox.TabIndex = 17;
             this.commandTaskDialogCustomButtonTextBox.Text = "Command";
+            this.ButtonActionToolTip.SetToolTip(this.commandTaskDialogCustomButtonTextBox, "This activates a CMD Command when clicking Your Custom Button. For more info righ" +
+        "t click.");
             // 
             // whatThisLinkCommand
             // 
             this.whatThisLinkCommand.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.whatsThishowToUseThisToolStripMenuItem});
             this.whatThisLinkCommand.Name = "whatThisLinkCommand";
-            this.whatThisLinkCommand.Size = new System.Drawing.Size(226, 26);
+            this.whatThisLinkCommand.Size = new System.Drawing.Size(157, 26);
             // 
             // whatsThishowToUseThisToolStripMenuItem
             // 
             this.whatsThishowToUseThisToolStripMenuItem.Name = "whatsThishowToUseThisToolStripMenuItem";
-            this.whatsThishowToUseThisToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.whatsThishowToUseThisToolStripMenuItem.Text = "Whats this? (how to use this)";
+            this.whatsThishowToUseThisToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.whatsThishowToUseThisToolStripMenuItem.Text = "How to use this";
             this.whatsThishowToUseThisToolStripMenuItem.Click += new System.EventHandler(this.whatsThishowToUseThisToolStripMenuItem_Click);
             // 
             // linkTaskDialogCustomButtonTextBox
@@ -406,6 +787,7 @@ namespace Dialog_Creator
             this.linkTaskDialogCustomButtonTextBox.Size = new System.Drawing.Size(274, 20);
             this.linkTaskDialogCustomButtonTextBox.TabIndex = 16;
             this.linkTaskDialogCustomButtonTextBox.Text = "Link";
+            this.ButtonActionToolTip.SetToolTip(this.linkTaskDialogCustomButtonTextBox, "This opens a Link when clicking Your Custom Button. For more info right click.");
             // 
             // commandTaskDialogLinkTextBox
             // 
@@ -415,6 +797,8 @@ namespace Dialog_Creator
             this.commandTaskDialogLinkTextBox.Size = new System.Drawing.Size(298, 20);
             this.commandTaskDialogLinkTextBox.TabIndex = 10;
             this.commandTaskDialogLinkTextBox.Text = "Command";
+            this.ButtonActionToolTip.SetToolTip(this.commandTaskDialogLinkTextBox, "This activates a CMD Command when clicking the Blue Text. For more info right cli" +
+        "ck.");
             // 
             // groupBox4
             // 
@@ -464,9 +848,9 @@ namespace Dialog_Creator
             this.footerIconQuestion.AutoSize = true;
             this.footerIconQuestion.Location = new System.Drawing.Point(6, 89);
             this.footerIconQuestion.Name = "footerIconQuestion";
-            this.footerIconQuestion.Size = new System.Drawing.Size(55, 17);
+            this.footerIconQuestion.Size = new System.Drawing.Size(80, 17);
             this.footerIconQuestion.TabIndex = 3;
-            this.footerIconQuestion.Text = "Shield";
+            this.footerIconQuestion.Text = "UAC Shield";
             this.footerIconQuestion.UseVisualStyleBackColor = true;
             this.footerIconQuestion.CheckedChanged += new System.EventHandler(this.footerIconQuestion_CheckedChanged);
             // 
@@ -593,6 +977,7 @@ namespace Dialog_Creator
             this.customButtonTextTextBox.Size = new System.Drawing.Size(274, 20);
             this.customButtonTextTextBox.TabIndex = 11;
             this.customButtonTextTextBox.Text = "Custom Button";
+            this.customButtonToolTip.SetToolTip(this.customButtonTextTextBox, "Sets the Text on the Custom Button.");
             // 
             // instTextTextBox
             // 
@@ -636,6 +1021,7 @@ namespace Dialog_Creator
             this.linkTextBox.Size = new System.Drawing.Size(298, 20);
             this.linkTextBox.TabIndex = 5;
             this.linkTextBox.Text = "Link";
+            this.ButtonActionToolTip.SetToolTip(this.linkTextBox, "This opens a Link when clicking the Blue Text. For more info right click.");
             // 
             // basicDialogGroup
             // 
@@ -671,6 +1057,7 @@ namespace Dialog_Creator
             this.websiteLinkTextBox.Size = new System.Drawing.Size(214, 20);
             this.websiteLinkTextBox.TabIndex = 4;
             this.websiteLinkTextBox.Text = "Link";
+            this.ButtonActionToolTip.SetToolTip(this.websiteLinkTextBox, "This opens a Link when clicking Button 1. For more info right click.");
             // 
             // commandTextBox3
             // 
@@ -680,6 +1067,7 @@ namespace Dialog_Creator
             this.commandTextBox3.Size = new System.Drawing.Size(214, 20);
             this.commandTextBox3.TabIndex = 9;
             this.commandTextBox3.Text = "Command 3";
+            this.ButtonActionToolTip.SetToolTip(this.commandTextBox3, "This activates a CMD Command when clicking Button 3. For more info right click.");
             // 
             // commandTextBox
             // 
@@ -689,6 +1077,7 @@ namespace Dialog_Creator
             this.commandTextBox.Size = new System.Drawing.Size(214, 20);
             this.commandTextBox.TabIndex = 5;
             this.commandTextBox.Text = "Command";
+            this.ButtonActionToolTip.SetToolTip(this.commandTextBox, "This activates a CMD Command when clicking Button 1. For more info right click.");
             // 
             // websiteLinkTextBox3
             // 
@@ -698,6 +1087,7 @@ namespace Dialog_Creator
             this.websiteLinkTextBox3.Size = new System.Drawing.Size(214, 20);
             this.websiteLinkTextBox3.TabIndex = 8;
             this.websiteLinkTextBox3.Text = "Link 3";
+            this.ButtonActionToolTip.SetToolTip(this.websiteLinkTextBox3, "This opens a Link when clicking Button 3. For more info right click.");
             // 
             // websiteLinkTextBox2
             // 
@@ -707,6 +1097,7 @@ namespace Dialog_Creator
             this.websiteLinkTextBox2.Size = new System.Drawing.Size(214, 20);
             this.websiteLinkTextBox2.TabIndex = 6;
             this.websiteLinkTextBox2.Text = "Link 2";
+            this.ButtonActionToolTip.SetToolTip(this.websiteLinkTextBox2, "This opens a Link when clicking Button 2. For more info right click.");
             // 
             // commandTextBox2
             // 
@@ -716,6 +1107,7 @@ namespace Dialog_Creator
             this.commandTextBox2.Size = new System.Drawing.Size(214, 20);
             this.commandTextBox2.TabIndex = 7;
             this.commandTextBox2.Text = "Command 2";
+            this.ButtonActionToolTip.SetToolTip(this.commandTextBox2, "This activates a CMD Command when clicking Button 2. For more info right click.");
             // 
             // groupBox2
             // 
@@ -745,377 +1137,48 @@ namespace Dialog_Creator
             this.aboutDialogCreatorToolStripMenuItem.Text = "About Dialog Creator";
             this.aboutDialogCreatorToolStripMenuItem.Click += new System.EventHandler(this.aboutDialogCreatorToolStripMenuItem_Click);
             // 
-            // button1Group
+            // customButtonToolTip
             // 
-            this.button1Group.Controls.Add(this.button1NoneCheckbox);
-            this.button1Group.Controls.Add(this.button1RetryCheckbox);
-            this.button1Group.Controls.Add(this.button1CloseCheckbox);
-            this.button1Group.Controls.Add(this.button1CancelCheckbox);
-            this.button1Group.Controls.Add(this.button1NoCheckbox);
-            this.button1Group.Controls.Add(this.button1YesCheckbox);
-            this.button1Group.Controls.Add(this.button1OKCheckbox);
-            this.button1Group.Location = new System.Drawing.Point(6, 136);
-            this.button1Group.Name = "button1Group";
-            this.button1Group.Size = new System.Drawing.Size(70, 188);
-            this.button1Group.TabIndex = 7;
-            this.button1Group.TabStop = false;
-            this.button1Group.Text = "Button 1";
+            this.customButtonToolTip.ToolTipTitle = "What does this do?";
             // 
-            // button1YesCheckbox
+            // ButtonActionToolTip
             // 
-            this.button1YesCheckbox.AutoSize = true;
-            this.button1YesCheckbox.Location = new System.Drawing.Point(7, 45);
-            this.button1YesCheckbox.Name = "button1YesCheckbox";
-            this.button1YesCheckbox.Size = new System.Drawing.Size(44, 17);
-            this.button1YesCheckbox.TabIndex = 1;
-            this.button1YesCheckbox.Text = "Yes";
-            this.button1YesCheckbox.UseVisualStyleBackColor = true;
-            this.button1YesCheckbox.CheckedChanged += new System.EventHandler(this.button1YesCheckbox_CheckedChanged);
+            this.ButtonActionToolTip.ToolTipTitle = "What does this do?";
             // 
-            // button1OKCheckbox
+            // groupBox7
             // 
-            this.button1OKCheckbox.AutoSize = true;
-            this.button1OKCheckbox.Location = new System.Drawing.Point(7, 22);
-            this.button1OKCheckbox.Name = "button1OKCheckbox";
-            this.button1OKCheckbox.Size = new System.Drawing.Size(41, 17);
-            this.button1OKCheckbox.TabIndex = 0;
-            this.button1OKCheckbox.Text = "OK";
-            this.button1OKCheckbox.UseVisualStyleBackColor = true;
-            this.button1OKCheckbox.CheckedChanged += new System.EventHandler(this.button1OKCheckbox_CheckedChanged);
+            this.groupBox7.Controls.Add(this.button3);
+            this.groupBox7.Controls.Add(this.button2);
+            this.groupBox7.Location = new System.Drawing.Point(296, 247);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(170, 53);
+            this.groupBox7.TabIndex = 8;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Exporting";
             // 
-            // button1NoCheckbox
+            // button3
             // 
-            this.button1NoCheckbox.AutoSize = true;
-            this.button1NoCheckbox.Location = new System.Drawing.Point(7, 68);
-            this.button1NoCheckbox.Name = "button1NoCheckbox";
-            this.button1NoCheckbox.Size = new System.Drawing.Size(40, 17);
-            this.button1NoCheckbox.TabIndex = 2;
-            this.button1NoCheckbox.Text = "No";
-            this.button1NoCheckbox.UseVisualStyleBackColor = true;
-            this.button1NoCheckbox.CheckedChanged += new System.EventHandler(this.button1NoCheckbox_CheckedChanged);
+            this.button3.Location = new System.Drawing.Point(87, 19);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Import";
+            this.ButtonActionToolTip.SetToolTip(this.button3, "Reads the Exported.txt file that is in the same directory as the program and appl" +
+        "ies the settings set in the file.");
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1CancelCheckbox
+            // button2
             // 
-            this.button1CancelCheckbox.AutoSize = true;
-            this.button1CancelCheckbox.Location = new System.Drawing.Point(7, 92);
-            this.button1CancelCheckbox.Name = "button1CancelCheckbox";
-            this.button1CancelCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.button1CancelCheckbox.TabIndex = 3;
-            this.button1CancelCheckbox.Text = "Cancel";
-            this.button1CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button1CancelCheckbox.CheckedChanged += new System.EventHandler(this.button1CancelCheckbox_CheckedChanged);
-            // 
-            // button1CloseCheckbox
-            // 
-            this.button1CloseCheckbox.AutoSize = true;
-            this.button1CloseCheckbox.Location = new System.Drawing.Point(7, 115);
-            this.button1CloseCheckbox.Name = "button1CloseCheckbox";
-            this.button1CloseCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button1CloseCheckbox.TabIndex = 4;
-            this.button1CloseCheckbox.Text = "Close";
-            this.button1CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button1CloseCheckbox.CheckedChanged += new System.EventHandler(this.button1CloseCheckbox_CheckedChanged);
-            // 
-            // button1RetryCheckbox
-            // 
-            this.button1RetryCheckbox.AutoSize = true;
-            this.button1RetryCheckbox.Location = new System.Drawing.Point(7, 138);
-            this.button1RetryCheckbox.Name = "button1RetryCheckbox";
-            this.button1RetryCheckbox.Size = new System.Drawing.Size(51, 17);
-            this.button1RetryCheckbox.TabIndex = 5;
-            this.button1RetryCheckbox.Text = "Retry";
-            this.button1RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button1RetryCheckbox.CheckedChanged += new System.EventHandler(this.button1RetryCheckbox_CheckedChanged);
-            // 
-            // button1NoneCheckbox
-            // 
-            this.button1NoneCheckbox.AutoSize = true;
-            this.button1NoneCheckbox.Location = new System.Drawing.Point(7, 161);
-            this.button1NoneCheckbox.Name = "button1NoneCheckbox";
-            this.button1NoneCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button1NoneCheckbox.TabIndex = 6;
-            this.button1NoneCheckbox.Text = "None";
-            this.button1NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button1NoneCheckbox.CheckedChanged += new System.EventHandler(this.button1NoneCheckbox_CheckedChanged);
-            // 
-            // button2Group
-            // 
-            this.button2Group.Controls.Add(this.button2NoneCheckbox);
-            this.button2Group.Controls.Add(this.button2RetryCheckbox);
-            this.button2Group.Controls.Add(this.button2CloseCheckbox);
-            this.button2Group.Controls.Add(this.button2CancelCheckbox);
-            this.button2Group.Controls.Add(this.button2NoCheckbox);
-            this.button2Group.Controls.Add(this.button2YesCheckbox);
-            this.button2Group.Controls.Add(this.button2OKCheckbox);
-            this.button2Group.Location = new System.Drawing.Point(82, 136);
-            this.button2Group.Name = "button2Group";
-            this.button2Group.Size = new System.Drawing.Size(70, 188);
-            this.button2Group.TabIndex = 8;
-            this.button2Group.TabStop = false;
-            this.button2Group.Text = "Button 2";
-            // 
-            // button2NoneCheckbox
-            // 
-            this.button2NoneCheckbox.AutoSize = true;
-            this.button2NoneCheckbox.Location = new System.Drawing.Point(7, 161);
-            this.button2NoneCheckbox.Name = "button2NoneCheckbox";
-            this.button2NoneCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button2NoneCheckbox.TabIndex = 6;
-            this.button2NoneCheckbox.Text = "None";
-            this.button2NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button2NoneCheckbox.CheckedChanged += new System.EventHandler(this.button2NoneCheckbox_CheckedChanged);
-            // 
-            // button2RetryCheckbox
-            // 
-            this.button2RetryCheckbox.AutoSize = true;
-            this.button2RetryCheckbox.Location = new System.Drawing.Point(7, 138);
-            this.button2RetryCheckbox.Name = "button2RetryCheckbox";
-            this.button2RetryCheckbox.Size = new System.Drawing.Size(51, 17);
-            this.button2RetryCheckbox.TabIndex = 5;
-            this.button2RetryCheckbox.Text = "Retry";
-            this.button2RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button2RetryCheckbox.CheckedChanged += new System.EventHandler(this.button2RetryCheckbox_CheckedChanged);
-            // 
-            // button2CloseCheckbox
-            // 
-            this.button2CloseCheckbox.AutoSize = true;
-            this.button2CloseCheckbox.Location = new System.Drawing.Point(7, 115);
-            this.button2CloseCheckbox.Name = "button2CloseCheckbox";
-            this.button2CloseCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button2CloseCheckbox.TabIndex = 4;
-            this.button2CloseCheckbox.Text = "Close";
-            this.button2CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button2CloseCheckbox.CheckedChanged += new System.EventHandler(this.button2CloseCheckbox_CheckedChanged);
-            // 
-            // button2CancelCheckbox
-            // 
-            this.button2CancelCheckbox.AutoSize = true;
-            this.button2CancelCheckbox.Location = new System.Drawing.Point(7, 92);
-            this.button2CancelCheckbox.Name = "button2CancelCheckbox";
-            this.button2CancelCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.button2CancelCheckbox.TabIndex = 3;
-            this.button2CancelCheckbox.Text = "Cancel";
-            this.button2CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button2CancelCheckbox.CheckedChanged += new System.EventHandler(this.button2CancelCheckbox_CheckedChanged);
-            // 
-            // button2NoCheckbox
-            // 
-            this.button2NoCheckbox.AutoSize = true;
-            this.button2NoCheckbox.Location = new System.Drawing.Point(7, 68);
-            this.button2NoCheckbox.Name = "button2NoCheckbox";
-            this.button2NoCheckbox.Size = new System.Drawing.Size(40, 17);
-            this.button2NoCheckbox.TabIndex = 2;
-            this.button2NoCheckbox.Text = "No";
-            this.button2NoCheckbox.UseVisualStyleBackColor = true;
-            this.button2NoCheckbox.CheckedChanged += new System.EventHandler(this.button2NoCheckbox_CheckedChanged);
-            // 
-            // button2YesCheckbox
-            // 
-            this.button2YesCheckbox.AutoSize = true;
-            this.button2YesCheckbox.Location = new System.Drawing.Point(7, 45);
-            this.button2YesCheckbox.Name = "button2YesCheckbox";
-            this.button2YesCheckbox.Size = new System.Drawing.Size(44, 17);
-            this.button2YesCheckbox.TabIndex = 1;
-            this.button2YesCheckbox.Text = "Yes";
-            this.button2YesCheckbox.UseVisualStyleBackColor = true;
-            this.button2YesCheckbox.CheckedChanged += new System.EventHandler(this.button2YesCheckbox_CheckedChanged);
-            // 
-            // button2OKCheckbox
-            // 
-            this.button2OKCheckbox.AutoSize = true;
-            this.button2OKCheckbox.Location = new System.Drawing.Point(7, 22);
-            this.button2OKCheckbox.Name = "button2OKCheckbox";
-            this.button2OKCheckbox.Size = new System.Drawing.Size(41, 17);
-            this.button2OKCheckbox.TabIndex = 0;
-            this.button2OKCheckbox.Text = "OK";
-            this.button2OKCheckbox.UseVisualStyleBackColor = true;
-            this.button2OKCheckbox.CheckedChanged += new System.EventHandler(this.button2OKCheckbox_CheckedChanged);
-            // 
-            // button3Group
-            // 
-            this.button3Group.Controls.Add(this.button3NoneCheckbox);
-            this.button3Group.Controls.Add(this.button3RetryCheckbox);
-            this.button3Group.Controls.Add(this.button3CloseCheckbox);
-            this.button3Group.Controls.Add(this.button3CancelCheckbox);
-            this.button3Group.Controls.Add(this.button3NoCheckbox);
-            this.button3Group.Controls.Add(this.button3YesCheckbox);
-            this.button3Group.Controls.Add(this.button3OKCheckbox);
-            this.button3Group.Location = new System.Drawing.Point(158, 136);
-            this.button3Group.Name = "button3Group";
-            this.button3Group.Size = new System.Drawing.Size(70, 188);
-            this.button3Group.TabIndex = 9;
-            this.button3Group.TabStop = false;
-            this.button3Group.Text = "Button 3";
-            // 
-            // button3NoneCheckbox
-            // 
-            this.button3NoneCheckbox.AutoSize = true;
-            this.button3NoneCheckbox.Location = new System.Drawing.Point(7, 161);
-            this.button3NoneCheckbox.Name = "button3NoneCheckbox";
-            this.button3NoneCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button3NoneCheckbox.TabIndex = 6;
-            this.button3NoneCheckbox.Text = "None";
-            this.button3NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button3NoneCheckbox.CheckedChanged += new System.EventHandler(this.button3NoneCheckbox_CheckedChanged);
-            // 
-            // button3RetryCheckbox
-            // 
-            this.button3RetryCheckbox.AutoSize = true;
-            this.button3RetryCheckbox.Location = new System.Drawing.Point(7, 138);
-            this.button3RetryCheckbox.Name = "button3RetryCheckbox";
-            this.button3RetryCheckbox.Size = new System.Drawing.Size(51, 17);
-            this.button3RetryCheckbox.TabIndex = 5;
-            this.button3RetryCheckbox.Text = "Retry";
-            this.button3RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button3RetryCheckbox.CheckedChanged += new System.EventHandler(this.button3RetryCheckbox_CheckedChanged);
-            // 
-            // button3CloseCheckbox
-            // 
-            this.button3CloseCheckbox.AutoSize = true;
-            this.button3CloseCheckbox.Location = new System.Drawing.Point(7, 115);
-            this.button3CloseCheckbox.Name = "button3CloseCheckbox";
-            this.button3CloseCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button3CloseCheckbox.TabIndex = 4;
-            this.button3CloseCheckbox.Text = "Close";
-            this.button3CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button3CloseCheckbox.CheckedChanged += new System.EventHandler(this.button3CloseCheckbox_CheckedChanged);
-            // 
-            // button3CancelCheckbox
-            // 
-            this.button3CancelCheckbox.AutoSize = true;
-            this.button3CancelCheckbox.Location = new System.Drawing.Point(7, 92);
-            this.button3CancelCheckbox.Name = "button3CancelCheckbox";
-            this.button3CancelCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.button3CancelCheckbox.TabIndex = 3;
-            this.button3CancelCheckbox.Text = "Cancel";
-            this.button3CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button3CancelCheckbox.CheckedChanged += new System.EventHandler(this.button3CancelCheckbox_CheckedChanged);
-            // 
-            // button3NoCheckbox
-            // 
-            this.button3NoCheckbox.AutoSize = true;
-            this.button3NoCheckbox.Location = new System.Drawing.Point(7, 68);
-            this.button3NoCheckbox.Name = "button3NoCheckbox";
-            this.button3NoCheckbox.Size = new System.Drawing.Size(40, 17);
-            this.button3NoCheckbox.TabIndex = 2;
-            this.button3NoCheckbox.Text = "No";
-            this.button3NoCheckbox.UseVisualStyleBackColor = true;
-            this.button3NoCheckbox.CheckedChanged += new System.EventHandler(this.button3NoCheckbox_CheckedChanged);
-            // 
-            // button3YesCheckbox
-            // 
-            this.button3YesCheckbox.AutoSize = true;
-            this.button3YesCheckbox.Location = new System.Drawing.Point(7, 45);
-            this.button3YesCheckbox.Name = "button3YesCheckbox";
-            this.button3YesCheckbox.Size = new System.Drawing.Size(44, 17);
-            this.button3YesCheckbox.TabIndex = 1;
-            this.button3YesCheckbox.Text = "Yes";
-            this.button3YesCheckbox.UseVisualStyleBackColor = true;
-            this.button3YesCheckbox.CheckedChanged += new System.EventHandler(this.button3YesCheckbox_CheckedChanged);
-            // 
-            // button3OKCheckbox
-            // 
-            this.button3OKCheckbox.AutoSize = true;
-            this.button3OKCheckbox.Location = new System.Drawing.Point(7, 22);
-            this.button3OKCheckbox.Name = "button3OKCheckbox";
-            this.button3OKCheckbox.Size = new System.Drawing.Size(41, 17);
-            this.button3OKCheckbox.TabIndex = 0;
-            this.button3OKCheckbox.Text = "OK";
-            this.button3OKCheckbox.UseVisualStyleBackColor = true;
-            this.button3OKCheckbox.CheckedChanged += new System.EventHandler(this.button3OKCheckbox_CheckedChanged);
-            // 
-            // button4Group
-            // 
-            this.button4Group.Controls.Add(this.button4NoneCheckbox);
-            this.button4Group.Controls.Add(this.button4RetryCheckbox);
-            this.button4Group.Controls.Add(this.button4CloseCheckbox);
-            this.button4Group.Controls.Add(this.button4CancelCheckbox);
-            this.button4Group.Controls.Add(this.button4NoCheckbox);
-            this.button4Group.Controls.Add(this.button4YesCheckbox);
-            this.button4Group.Controls.Add(this.button4OKCheckbox);
-            this.button4Group.Location = new System.Drawing.Point(234, 136);
-            this.button4Group.Name = "button4Group";
-            this.button4Group.Size = new System.Drawing.Size(70, 188);
-            this.button4Group.TabIndex = 10;
-            this.button4Group.TabStop = false;
-            this.button4Group.Text = "Button 4";
-            // 
-            // button4NoneCheckbox
-            // 
-            this.button4NoneCheckbox.AutoSize = true;
-            this.button4NoneCheckbox.Location = new System.Drawing.Point(7, 161);
-            this.button4NoneCheckbox.Name = "button4NoneCheckbox";
-            this.button4NoneCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button4NoneCheckbox.TabIndex = 6;
-            this.button4NoneCheckbox.Text = "None";
-            this.button4NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button4NoneCheckbox.CheckedChanged += new System.EventHandler(this.button4NoneCheckbox_CheckedChanged);
-            // 
-            // button4RetryCheckbox
-            // 
-            this.button4RetryCheckbox.AutoSize = true;
-            this.button4RetryCheckbox.Location = new System.Drawing.Point(7, 138);
-            this.button4RetryCheckbox.Name = "button4RetryCheckbox";
-            this.button4RetryCheckbox.Size = new System.Drawing.Size(51, 17);
-            this.button4RetryCheckbox.TabIndex = 5;
-            this.button4RetryCheckbox.Text = "Retry";
-            this.button4RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button4RetryCheckbox.CheckedChanged += new System.EventHandler(this.button4RetryCheckbox_CheckedChanged);
-            // 
-            // button4CloseCheckbox
-            // 
-            this.button4CloseCheckbox.AutoSize = true;
-            this.button4CloseCheckbox.Location = new System.Drawing.Point(7, 115);
-            this.button4CloseCheckbox.Name = "button4CloseCheckbox";
-            this.button4CloseCheckbox.Size = new System.Drawing.Size(52, 17);
-            this.button4CloseCheckbox.TabIndex = 4;
-            this.button4CloseCheckbox.Text = "Close";
-            this.button4CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button4CloseCheckbox.CheckedChanged += new System.EventHandler(this.button4CloseCheckbox_CheckedChanged);
-            // 
-            // button4CancelCheckbox
-            // 
-            this.button4CancelCheckbox.AutoSize = true;
-            this.button4CancelCheckbox.Location = new System.Drawing.Point(7, 92);
-            this.button4CancelCheckbox.Name = "button4CancelCheckbox";
-            this.button4CancelCheckbox.Size = new System.Drawing.Size(59, 17);
-            this.button4CancelCheckbox.TabIndex = 3;
-            this.button4CancelCheckbox.Text = "Cancel";
-            this.button4CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button4CancelCheckbox.CheckedChanged += new System.EventHandler(this.button4CancelCheckbox_CheckedChanged);
-            // 
-            // button4NoCheckbox
-            // 
-            this.button4NoCheckbox.AutoSize = true;
-            this.button4NoCheckbox.Location = new System.Drawing.Point(7, 68);
-            this.button4NoCheckbox.Name = "button4NoCheckbox";
-            this.button4NoCheckbox.Size = new System.Drawing.Size(40, 17);
-            this.button4NoCheckbox.TabIndex = 2;
-            this.button4NoCheckbox.Text = "No";
-            this.button4NoCheckbox.UseVisualStyleBackColor = true;
-            this.button4NoCheckbox.CheckedChanged += new System.EventHandler(this.button4NoCheckbox_CheckedChanged);
-            // 
-            // button4YesCheckbox
-            // 
-            this.button4YesCheckbox.AutoSize = true;
-            this.button4YesCheckbox.Location = new System.Drawing.Point(7, 45);
-            this.button4YesCheckbox.Name = "button4YesCheckbox";
-            this.button4YesCheckbox.Size = new System.Drawing.Size(44, 17);
-            this.button4YesCheckbox.TabIndex = 1;
-            this.button4YesCheckbox.Text = "Yes";
-            this.button4YesCheckbox.UseVisualStyleBackColor = true;
-            this.button4YesCheckbox.CheckedChanged += new System.EventHandler(this.button4YesCheckbox_CheckedChanged);
-            // 
-            // button4OKCheckbox
-            // 
-            this.button4OKCheckbox.AutoSize = true;
-            this.button4OKCheckbox.Location = new System.Drawing.Point(7, 22);
-            this.button4OKCheckbox.Name = "button4OKCheckbox";
-            this.button4OKCheckbox.Size = new System.Drawing.Size(41, 17);
-            this.button4OKCheckbox.TabIndex = 0;
-            this.button4OKCheckbox.Text = "OK";
-            this.button4OKCheckbox.UseVisualStyleBackColor = true;
-            this.button4OKCheckbox.CheckedChanged += new System.EventHandler(this.button4OKCheckbox_CheckedChanged);
+            this.button2.Location = new System.Drawing.Point(6, 19);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 0;
+            this.button2.Text = "Export";
+            this.ButtonActionToolTip.SetToolTip(this.button2, "Exports your settings (not including Button Actions) to a Exported.txt file in th" +
+        "e same directory as the program.");
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -1123,6 +1186,7 @@ namespace Dialog_Creator
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 532);
             this.ContextMenuStrip = this.MainContextMenu;
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DialogTypeDropdown);
             this.Controls.Add(this.basicDialogGroup);
@@ -1132,7 +1196,7 @@ namespace Dialog_Creator
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Dialog Creator (ver: 1.1.0)";
+            this.Text = "Dialog Creator (ver: 1.2.0)";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1140,6 +1204,14 @@ namespace Dialog_Creator
             this.groupBox3.PerformLayout();
             this.taskDialogGroup.ResumeLayout(false);
             this.taskDialogGroup.PerformLayout();
+            this.button4Group.ResumeLayout(false);
+            this.button4Group.PerformLayout();
+            this.button3Group.ResumeLayout(false);
+            this.button3Group.PerformLayout();
+            this.button2Group.ResumeLayout(false);
+            this.button2Group.PerformLayout();
+            this.button1Group.ResumeLayout(false);
+            this.button1Group.PerformLayout();
             this.whatThisLinkCommand.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1151,14 +1223,7 @@ namespace Dialog_Creator
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.MainContextMenu.ResumeLayout(false);
-            this.button1Group.ResumeLayout(false);
-            this.button1Group.PerformLayout();
-            this.button2Group.ResumeLayout(false);
-            this.button2Group.PerformLayout();
-            this.button3Group.ResumeLayout(false);
-            this.button3Group.PerformLayout();
-            this.button4Group.ResumeLayout(false);
-            this.button4Group.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1255,6 +1320,11 @@ namespace Dialog_Creator
         private System.Windows.Forms.CheckBox button4NoCheckbox;
         private System.Windows.Forms.CheckBox button4YesCheckbox;
         private System.Windows.Forms.CheckBox button4OKCheckbox;
+        private System.Windows.Forms.ToolTip customButtonToolTip;
+        private System.Windows.Forms.ToolTip ButtonActionToolTip;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

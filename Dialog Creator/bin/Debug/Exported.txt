@@ -1,8 +1,0 @@
-advanced
-Message Text
-Titlebar Text
-True
-False
-False
-False
-False

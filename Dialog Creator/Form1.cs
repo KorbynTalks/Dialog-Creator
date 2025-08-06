@@ -237,6 +237,23 @@ namespace Dialog_Creator
                 footerIcon = TaskDialogStandardIcon.None;
             }
 
+            if(ShieldGray.Checked)
+            {
+                Standardicon = TaskDialogStandardIcon.ShieldGrayHeader;
+            } else if (ShieldRed.Checked)
+            {
+                Standardicon = TaskDialogStandardIcon.SecurityErrorHeader;
+            } else if(blueShield.Checked)
+            {
+                Standardicon = TaskDialogStandardIcon.ShieldBlueHeader;
+            } else if(yellowShield.Checked)
+            {
+                Standardicon = TaskDialogStandardIcon.SecurityWarningHeader;
+            } else if(greenShield.Checked)
+            {
+                Standardicon = TaskDialogStandardIcon.SecuritySuccessHeader;
+            }
+
             if(expmdeShowFooterCheckbox.Checked)
             {
                 expandedDetailsLocation = TaskDialogExpandedDetailsLocation.ExpandFooter;
@@ -705,6 +722,11 @@ namespace Dialog_Creator
                 warningCheckbox.Checked = false;
                 questionCheckbox.Checked = false;
                 noIconCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+                ShieldGray.Checked = false;
             }
         }
 
@@ -716,6 +738,11 @@ namespace Dialog_Creator
                 warningCheckbox.Checked = false;
                 questionCheckbox.Checked = false;
                 noIconCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+                ShieldGray.Checked = false;
             }
         }
 
@@ -727,6 +754,11 @@ namespace Dialog_Creator
                 errorCheckbox.Checked = false;
                 questionCheckbox.Checked = false;
                 noIconCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+                ShieldGray.Checked = false;
             }
         }
 
@@ -738,6 +770,11 @@ namespace Dialog_Creator
                 warningCheckbox.Checked = false;
                 errorCheckbox.Checked = false;
                 noIconCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+                ShieldGray.Checked = false;
             }
         }
 
@@ -749,6 +786,11 @@ namespace Dialog_Creator
                 warningCheckbox.Checked = false;
                 questionCheckbox.Checked = false;
                 errorCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+                ShieldGray.Checked = false;
             }
         }
 
@@ -1213,6 +1255,86 @@ namespace Dialog_Creator
             }
         }
 
+        private void ShieldGray_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ShieldGray.Checked == true)
+            {
+                errorCheckbox.Checked = false;
+                informationCheckbox.Checked = false;
+                warningCheckbox.Checked = false;
+                questionCheckbox.Checked = false;
+                noIconCheckbox.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+            }
+        }
+
+        private void ShieldRed_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShieldRed.Checked == true)
+            {
+                errorCheckbox.Checked = false;
+                informationCheckbox.Checked = false;
+                warningCheckbox.Checked = false;
+                questionCheckbox.Checked = false;
+                noIconCheckbox.Checked = false;
+                ShieldGray.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+            }
+        }
+
+        private void blueShield_CheckedChanged(object sender, EventArgs e)
+        {
+            if (blueShield.Checked == true)
+            {
+                errorCheckbox.Checked = false;
+                informationCheckbox.Checked = false;
+                warningCheckbox.Checked = false;
+                questionCheckbox.Checked = false;
+                noIconCheckbox.Checked = false;
+                ShieldGray.Checked = false;
+                ShieldRed.Checked = false;
+                yellowShield.Checked = false;
+                greenShield.Checked = false;
+            }
+        }
+
+        private void yellowShield_CheckedChanged(object sender, EventArgs e)
+        {
+            if (yellowShield.Checked == true)
+            {
+                errorCheckbox.Checked = false;
+                informationCheckbox.Checked = false;
+                warningCheckbox.Checked = false;
+                questionCheckbox.Checked = false;
+                noIconCheckbox.Checked = false;
+                ShieldGray.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                greenShield.Checked = false;
+            }
+        }
+
+        private void greenShield_CheckedChanged(object sender, EventArgs e)
+        {
+            if (greenShield.Checked == true)
+            {
+                errorCheckbox.Checked = false;
+                informationCheckbox.Checked = false;
+                warningCheckbox.Checked = false;
+                questionCheckbox.Checked = false;
+                noIconCheckbox.Checked = false;
+                ShieldGray.Checked = false;
+                ShieldRed.Checked = false;
+                blueShield.Checked = false;
+                yellowShield.Checked = false;
+            }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             bool selectedButtonBasicOK = false;
@@ -1367,6 +1489,12 @@ namespace Dialog_Creator
 
             string customButtonText = String.Empty;
 
+            bool selectedIconGrayShield = false;
+            bool selectedIconRedShield = false;
+            bool selectedIconBlueShield = false;
+            bool selectedIconYellowShield = false;
+            bool selectedIconGreenShield = false;
+
             if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
             {
 
@@ -1405,6 +1533,21 @@ namespace Dialog_Creator
                 else if (noIconCheckbox.Checked)
                 {
                     selectedIconNone = true;
+                } else if(ShieldGray.Checked)
+                {
+                    selectedIconGrayShield = true;
+                } else if(ShieldRed.Checked)
+                {
+                    selectedIconRedShield = true;
+                } else if(blueShield.Checked)
+                {
+                    selectedIconBlueShield = true;
+                } else if(yellowShield.Checked)
+                {
+                    selectedIconYellowShield = true;
+                } else if(greenShield.Checked)
+                {
+                    selectedIconGreenShield = true;
                 }
                 else
                 {
@@ -1663,6 +1806,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerText);
                         sw.WriteLine(footerIcon);
                         sw.WriteLine(footerSetting);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
                 else
@@ -1693,6 +1841,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerText);
                         sw.WriteLine(footerIcon);
                         sw.WriteLine(footerSetting);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
             }
@@ -1735,6 +1888,26 @@ namespace Dialog_Creator
                 else if (noIconCheckbox.Checked)
                 {
                     selectedIconNone = true;
+                }
+                else if (ShieldGray.Checked)
+                {
+                    selectedIconGrayShield = true;
+                }
+                else if (ShieldRed.Checked)
+                {
+                    selectedIconRedShield = true;
+                }
+                else if (blueShield.Checked)
+                {
+                    selectedIconBlueShield = true;
+                }
+                else if (yellowShield.Checked)
+                {
+                    selectedIconYellowShield = true;
+                }
+                else if (greenShield.Checked)
+                {
+                    selectedIconGreenShield = true;
                 }
                 else
                 {
@@ -2028,6 +2201,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerSetting);
                         sw.WriteLine(linkText1);
                         sw.WriteLine(linkText2);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
                 else
@@ -2060,6 +2238,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerSetting);
                         sw.WriteLine(linkText1);
                         sw.WriteLine(linkText2);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
             }
@@ -2102,6 +2285,26 @@ namespace Dialog_Creator
                 else if (noIconCheckbox.Checked)
                 {
                     selectedIconNone = true;
+                }
+                else if (ShieldGray.Checked)
+                {
+                    selectedIconGrayShield = true;
+                }
+                else if (ShieldRed.Checked)
+                {
+                    selectedIconRedShield = true;
+                }
+                else if (blueShield.Checked)
+                {
+                    selectedIconBlueShield = true;
+                }
+                else if (yellowShield.Checked)
+                {
+                    selectedIconYellowShield = true;
+                }
+                else if (greenShield.Checked)
+                {
+                    selectedIconGreenShield = true;
                 }
                 else
                 {
@@ -2258,6 +2461,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerIcon);
                         sw.WriteLine(footerSetting);
                         sw.WriteLine(customButtonText);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
                 else
@@ -2289,6 +2497,11 @@ namespace Dialog_Creator
                         sw.WriteLine(footerIcon);
                         sw.WriteLine(footerSetting);
                         sw.WriteLine(customButtonText);
+                        sw.WriteLine(selectedIconGrayShield);
+                        sw.WriteLine(selectedIconRedShield);
+                        sw.WriteLine(selectedIconBlueShield);
+                        sw.WriteLine(selectedIconYellowShield);
+                        sw.WriteLine(selectedIconGreenShield);
                     }
                 }
             }
@@ -2335,6 +2548,12 @@ namespace Dialog_Creator
             string linkText2;
 
             string customButtonText;
+
+            bool selectedIconGrayShield;
+            bool selectedIconRedShield;
+            bool selectedIconBlueShield;
+            bool selectedIconYellowShield;
+            bool selectedIconGreenShield;
 
             if (!File.Exists("./Exported.txt"))
             {
@@ -2404,6 +2623,11 @@ namespace Dialog_Creator
                     footerText = exportedFile[20];
                     footerIcon = int.Parse(exportedFile[21]);
                     footerSetting = int.Parse(exportedFile[22]);
+                    selectedIconGrayShield = bool.Parse(exportedFile[23]);
+                    selectedIconRedShield = bool.Parse(exportedFile[24]);
+                    selectedIconBlueShield = bool.Parse(exportedFile[25]);
+                    selectedIconYellowShield = bool.Parse(exportedFile[26]);
+                    selectedIconGreenShield = bool.Parse(exportedFile[27]);
 
                     // Apply the values
                     messageTextTextBox.Text = messageText;
@@ -2412,6 +2636,11 @@ namespace Dialog_Creator
                     informationCheckbox.Checked = selectedIconInformation;
                     warningCheckbox.Checked = selectedIconWarning;
                     questionCheckbox.Checked = selectedIconQuestion;
+                    ShieldGray.Checked = selectedIconGrayShield;
+                    ShieldRed.Checked = selectedIconRedShield;
+                    blueShield.Checked = selectedIconBlueShield;
+                    yellowShield.Checked = selectedIconYellowShield;
+                    greenShield.Checked = selectedIconGreenShield;
                     noneCheckbox.Checked = selectedIconNone;
                     if(button1 == 0)
                     {
@@ -2591,6 +2820,11 @@ namespace Dialog_Creator
                     footerSetting = int.Parse(exportedFile[22]);
                     linkText1 = exportedFile[23];
                     linkText2 = exportedFile[24];
+                    selectedIconGrayShield = bool.Parse(exportedFile[25]);
+                    selectedIconRedShield = bool.Parse(exportedFile[26]);
+                    selectedIconBlueShield = bool.Parse(exportedFile[27]);
+                    selectedIconYellowShield = bool.Parse(exportedFile[28]);
+                    selectedIconGreenShield = bool.Parse(exportedFile[29]);
 
 
                     // Apply the values
@@ -2600,6 +2834,11 @@ namespace Dialog_Creator
                     informationCheckbox.Checked = selectedIconInformation;
                     warningCheckbox.Checked = selectedIconWarning;
                     questionCheckbox.Checked = selectedIconQuestion;
+                    ShieldGray.Checked = selectedIconGrayShield;
+                    ShieldRed.Checked = selectedIconRedShield;
+                    blueShield.Checked = selectedIconBlueShield;
+                    yellowShield.Checked = selectedIconYellowShield;
+                    greenShield.Checked = selectedIconGreenShield;
                     noneCheckbox.Checked = selectedIconNone;
                     if (button1 == 0)
                     {
@@ -2789,6 +3028,11 @@ namespace Dialog_Creator
                     footerIcon = int.Parse(exportedFile[21]);
                     footerSetting = int.Parse(exportedFile[22]);
                     customButtonText = exportedFile[23];
+                    selectedIconGrayShield = bool.Parse(exportedFile[24]);
+                    selectedIconRedShield = bool.Parse(exportedFile[25]);
+                    selectedIconBlueShield = bool.Parse(exportedFile[26]);
+                    selectedIconYellowShield = bool.Parse(exportedFile[27]);
+                    selectedIconGreenShield = bool.Parse(exportedFile[28]);
 
                     // Apply the values
                     messageTextTextBox.Text = messageText;
@@ -2797,6 +3041,11 @@ namespace Dialog_Creator
                     informationCheckbox.Checked = selectedIconInformation;
                     warningCheckbox.Checked = selectedIconWarning;
                     questionCheckbox.Checked = selectedIconQuestion;
+                    ShieldGray.Checked = selectedIconGrayShield;
+                    ShieldRed.Checked = selectedIconRedShield;
+                    blueShield.Checked = selectedIconBlueShield;
+                    yellowShield.Checked = selectedIconYellowShield;
+                    greenShield.Checked = selectedIconGreenShield;
                     noneCheckbox.Checked = selectedIconNone;
                     
                     cancelableCheckbox.Checked = cancelable;
@@ -2839,5 +3088,7 @@ namespace Dialog_Creator
 
             }
         }
+
+        
     }
 }

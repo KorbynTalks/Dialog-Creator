@@ -126,6 +126,12 @@ namespace Dialog_Creator
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.ShieldGray = new System.Windows.Forms.CheckBox();
+            this.ShieldRed = new System.Windows.Forms.CheckBox();
+            this.blueShield = new System.Windows.Forms.CheckBox();
+            this.yellowShield = new System.Windows.Forms.CheckBox();
+            this.greenShield = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.taskDialogGroup.SuspendLayout();
@@ -141,6 +147,7 @@ namespace Dialog_Creator
             this.groupBox2.SuspendLayout();
             this.MainContextMenu.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -359,6 +366,7 @@ namespace Dialog_Creator
             // 
             // taskDialogGroup
             // 
+            this.taskDialogGroup.Controls.Add(this.groupBox8);
             this.taskDialogGroup.Controls.Add(this.button4Group);
             this.taskDialogGroup.Controls.Add(this.button3Group);
             this.taskDialogGroup.Controls.Add(this.button2Group);
@@ -1180,6 +1188,75 @@ namespace Dialog_Creator
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.greenShield);
+            this.groupBox8.Controls.Add(this.yellowShield);
+            this.groupBox8.Controls.Add(this.blueShield);
+            this.groupBox8.Controls.Add(this.ShieldRed);
+            this.groupBox8.Controls.Add(this.ShieldGray);
+            this.groupBox8.Location = new System.Drawing.Point(310, 406);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(124, 105);
+            this.groupBox8.TabIndex = 18;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Special Shield Colors";
+            // 
+            // ShieldGray
+            // 
+            this.ShieldGray.AutoSize = true;
+            this.ShieldGray.Location = new System.Drawing.Point(6, 21);
+            this.ShieldGray.Name = "ShieldGray";
+            this.ShieldGray.Size = new System.Drawing.Size(48, 17);
+            this.ShieldGray.TabIndex = 5;
+            this.ShieldGray.Text = "Gray";
+            this.ShieldGray.UseVisualStyleBackColor = true;
+            this.ShieldGray.CheckedChanged += new System.EventHandler(this.ShieldGray_CheckedChanged);
+            // 
+            // ShieldRed
+            // 
+            this.ShieldRed.AutoSize = true;
+            this.ShieldRed.Location = new System.Drawing.Point(6, 40);
+            this.ShieldRed.Name = "ShieldRed";
+            this.ShieldRed.Size = new System.Drawing.Size(46, 17);
+            this.ShieldRed.TabIndex = 6;
+            this.ShieldRed.Text = "Red";
+            this.ShieldRed.UseVisualStyleBackColor = true;
+            this.ShieldRed.CheckedChanged += new System.EventHandler(this.ShieldRed_CheckedChanged);
+            // 
+            // blueShield
+            // 
+            this.blueShield.AutoSize = true;
+            this.blueShield.Location = new System.Drawing.Point(6, 58);
+            this.blueShield.Name = "blueShield";
+            this.blueShield.Size = new System.Drawing.Size(47, 17);
+            this.blueShield.TabIndex = 7;
+            this.blueShield.Text = "Blue";
+            this.blueShield.UseVisualStyleBackColor = true;
+            this.blueShield.CheckedChanged += new System.EventHandler(this.blueShield_CheckedChanged);
+            // 
+            // yellowShield
+            // 
+            this.yellowShield.AutoSize = true;
+            this.yellowShield.Location = new System.Drawing.Point(60, 21);
+            this.yellowShield.Name = "yellowShield";
+            this.yellowShield.Size = new System.Drawing.Size(57, 17);
+            this.yellowShield.TabIndex = 8;
+            this.yellowShield.Text = "Yellow";
+            this.yellowShield.UseVisualStyleBackColor = true;
+            this.yellowShield.CheckedChanged += new System.EventHandler(this.yellowShield_CheckedChanged);
+            // 
+            // greenShield
+            // 
+            this.greenShield.AutoSize = true;
+            this.greenShield.Location = new System.Drawing.Point(60, 40);
+            this.greenShield.Name = "greenShield";
+            this.greenShield.Size = new System.Drawing.Size(55, 17);
+            this.greenShield.TabIndex = 9;
+            this.greenShield.Text = "Green";
+            this.greenShield.UseVisualStyleBackColor = true;
+            this.greenShield.CheckedChanged += new System.EventHandler(this.greenShield_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1224,6 +1301,8 @@ namespace Dialog_Creator
             this.groupBox2.PerformLayout();
             this.MainContextMenu.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1325,6 +1404,12 @@ namespace Dialog_Creator
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.CheckBox yellowShield;
+        private System.Windows.Forms.CheckBox blueShield;
+        private System.Windows.Forms.CheckBox ShieldRed;
+        private System.Windows.Forms.CheckBox ShieldGray;
+        private System.Windows.Forms.CheckBox greenShield;
     }
 }
 

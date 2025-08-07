@@ -8,6 +8,7 @@ namespace Dialog_Creator
 {
     public partial class Form1 : Form
     {
+        // Classic Message Box variables
         private MessageBoxButtons classicMessageBoxButton;
         private MessageBoxIcon classicMessageBoxIcon;
 
@@ -15,6 +16,7 @@ namespace Dialog_Creator
         private DialogResult classicMessageBoxRequiredButton2ToClickToPerformAction;
         private DialogResult classicMessageBoxRequiredButton3ToClickToPerformAction;
 
+        // Task Dialog Box variables
         private TaskDialogStandardButtons Standardbutton1;
         private TaskDialogStandardButtons Standardbutton2;
         private TaskDialogStandardButtons Standardbutton3;
@@ -25,16 +27,19 @@ namespace Dialog_Creator
 
         private TaskDialogExpandedDetailsLocation expandedDetailsLocation;
 
+        // Ignore
         public Form1()
         {
             InitializeComponent();
         }
 
+        // Code that activates as soon as the Application is started
         private void Form1_Load(object sender, EventArgs e)
         {
             DialogTypeDropdown.SelectedItem = "Basic Dialog Box (Classic Error Message)"; // Set the Dropdown to the Classic Dialog Box option
         }
 
+        // Code that activates when the Create button is clicked.
         private void button1_Click(object sender, EventArgs e)
         {
             // When the Create button is clicked, it will check what Button Checkbox is selected then changes MessageBoxButtons variable classicMessageBoxButton to the specified Buttons.
@@ -79,6 +84,7 @@ namespace Dialog_Creator
                 classicMessageBoxRequiredButtonToClickToPerformAction = DialogResult.OK;
             }
 
+            // Similar to the stuff above, but for Task Dialog Buttons. (Not Custom Buttons)
             if(button1OKCheckbox.Checked)
             {
                 Standardbutton1 = TaskDialogStandardButtons.Ok;
@@ -265,6 +271,7 @@ namespace Dialog_Creator
                 expandedDetailsLocation = TaskDialogExpandedDetailsLocation.Hide;
             }
 
+            // These are failsafe measures. Incase these TextBox strings are nothing, add a space to them. This is so the application doesnt crash because the strings are "null" or nonexistent.
             if(linkText1TextBox.Text.Length == 0)
             {
                 linkText1TextBox.Text = " ";
@@ -348,7 +355,7 @@ namespace Dialog_Creator
                     titlebarTextTextBox.Text,
                     Standardicon,
                     customButtonTextTextBox.Text,
-                    elevatedIconCheckbox.Checked,
+                    elevatedIconCustomButtonCheckbox.Checked,
                     expandedDetailsLocation,
                     cancelableCheckbox.Checked,
                     collapsedSeeDetailsTextBox.Text,
@@ -358,9 +365,36 @@ namespace Dialog_Creator
                     footerIcon,
                     linkTaskDialogCustomButtonTextBox.Text,
                     commandTaskDialogCustomButtonTextBox.Text,
-                    messageTextTextBox.Text
+                    messageTextTextBox.Text,
+                    customButton2TextTextBox.Text,
+                    linkTaskDialogCustomButton2TextBox.Text,
+                    commandTaskDialogCustomButton2TextBox.Text,
+                    elevatedIconCustomButton2Checkbox.Checked,
+                    customButton3TextTextBox.Text,
+                    linkTaskDialogCustomButton3TextBox.Text,
+                    commandTaskDialogCustomButton3TextBox.Text,
+                    elevatedIconCustomButton3Checkbox.Checked,
+                    customButton4TextTextBox.Text,
+                    linkTaskDialogCustomButton4TextBox.Text,
+                    commandTaskDialogCustomButton4TextBox.Text,
+                    elevatedIconCustomButton4Checkbox.Checked,
+                    customButton5TextTextBox.Text,
+                    linkTaskDialogCustomButton5TextBox.Text,
+                    commandTaskDialogCustomButton5TextBox.Text,
+                    elevatedIconCustomButton5Checkbox.Checked,
+                    customButtonShowCheckbox.Checked,
+                    customButton2ShowCheckbox.Checked,
+                    customButton3ShowCheckbox.Checked,
+                    customButton4ShowCheckbox.Checked,
+                    customButton5ShowCheckbox.Checked,
+                    customButtonDisabledCheckbox.Checked,
+                    customButton2DisabledCheckbox.Checked,
+                    customButton3DisabledCheckbox.Checked,
+                    customButton4DisabledCheckbox.Checked,
+                    customButton5DisabledCheckbox.Checked
+
                 );
-            } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
+            } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)") // Basic Task Dialog
             {
                 TaskDialogBox(
                    instTextTextBox.Text,
@@ -420,7 +454,8 @@ namespace Dialog_Creator
             TaskDialogCommandLink link = null;
             TaskDialog dia = new TaskDialog();
 
-            if (stanButton1 == TaskDialogStandardButtons.None && stanButton2 == TaskDialogStandardButtons.None && stanButton3 == TaskDialogStandardButtons.None && dia.Cancelable == false)
+            // Another failsafe so that if all the buttons are gone and the close button on the Titlebar is set to none, set the Titlebar close button to be enabled anyway. This is so the Window is not unclosable.
+            if (stanButton1 == TaskDialogStandardButtons.None && stanButton2 == TaskDialogStandardButtons.None && stanButton3 == TaskDialogStandardButtons.None && stanButton4 == TaskDialogStandardButtons.None && dia.Cancelable == false)
             {
                 cancelable = true;
             }
@@ -478,14 +513,45 @@ namespace Dialog_Creator
             TaskDialogStandardIcon footerIcon,
             string linkTextBox,
             string commandTextBox,
-            string messageText
+            string messageText,
+            string customButtonText2,
+            string linkTextBox2,
+            string commandTextBox2,
+            bool useElevButtonIcon2,
+            string customButtonText3,
+            string linkTextBox3,
+            string commandTextBox3,
+            bool useElevButtonIcon3,
+            string customButtonText4,
+            string linkTextBox4,
+            string commandTextBox4,
+            bool useElevButtonIcon4,
+            string customButtonText5,
+            string linkTextBox5,
+            string commandTextBox5,
+            bool useElevButtonIcon5,
+            bool showButton1,
+            bool showButton2,
+            bool showButton3,
+            bool showButton4,
+            bool showButton5,
+            bool disableButton1,
+            bool disableButton2,
+            bool disableButton3,
+            bool disableButton4,
+            bool disableButton5
         )
         {
             TaskDialogButton customButton = new TaskDialogButton("customButton1", customButtonText);
+            TaskDialogButton customButton2 = new TaskDialogButton("customButton2", customButtonText2);
+            TaskDialogButton customButton3 = new TaskDialogButton("customButton3", customButtonText3);
+            TaskDialogButton customButton4 = new TaskDialogButton("customButton4", customButtonText4);
+            TaskDialogButton customButton5 = new TaskDialogButton("customButton5", customButtonText5);
             TaskDialog dia = new TaskDialog();
 
+
             customButton.UseElevationIcon = useElevButtonIcon;
-            customButton.Enabled = true;
+            customButton.Enabled = !disableButton1;
             customButton.Click += new EventHandler(buttonClick);
 
             void buttonClick(object sender, EventArgs e)
@@ -505,7 +571,100 @@ namespace Dialog_Creator
                 
             }
 
+            customButton2.UseElevationIcon = useElevButtonIcon2;
+            customButton2.Enabled = !disableButton2;
+            customButton2.Click += new EventHandler(button2Click);
+
+            void button2Click(object sender, EventArgs e)
+            {
+                if (linkTextBox2.Length == 0 && commandTextBox2.Length == 0)
+                {
+                    dia.Close();
+                }
+                else if (linkTextBox2.Contains("https://"))
+                {
+                    Process.Start(linkTextBox2);
+                    dia.Close();
+                }
+                else if (commandTextBox2.Length > 0)
+                {
+                    Process.Start("cmd.exe", "/c" + commandTextBox2);
+                    dia.Close();
+                }
+
+            }
+
+            customButton3.UseElevationIcon = useElevButtonIcon3;
+            customButton3.Enabled = !disableButton3;
+            customButton3.Click += new EventHandler(button3Click);
+
+            void button3Click(object sender, EventArgs e)
+            {
+                if (linkTextBox3.Length == 0 && commandTextBox3.Length == 0)
+                {
+                    dia.Close();
+                }
+                else if (linkTextBox3.Contains("https://"))
+                {
+                    Process.Start(linkTextBox3);
+                    dia.Close();
+                }
+                else if (commandTextBox3.Length > 0)
+                {
+                    Process.Start("cmd.exe", "/c" + commandTextBox3);
+                    dia.Close();
+                }
+
+            }
+
+            customButton4.UseElevationIcon = useElevButtonIcon4;
+            customButton4.Enabled = !disableButton4;
+            customButton4.Click += new EventHandler(button4Click);
+
+            void button4Click(object sender, EventArgs e)
+            {
+                if (linkTextBox4.Length == 0 && commandTextBox4.Length == 0)
+                {
+                    dia.Close();
+                }
+                else if (linkTextBox4.Contains("https://"))
+                {
+                    Process.Start(linkTextBox4);
+                    dia.Close();
+                }
+                else if (commandTextBox4.Length > 0)
+                {
+                    Process.Start("cmd.exe", "/c" + commandTextBox4);
+                    dia.Close();
+                }
+
+            }
+
+            customButton5.UseElevationIcon = useElevButtonIcon5;
+            customButton5.Enabled = !disableButton5;
+            customButton5.Click += new EventHandler(button5Click);
+
+            void button5Click(object sender, EventArgs e)
+            {
+                if (linkTextBox5.Length == 0 && commandTextBox5.Length == 0)
+                {
+                    dia.Close();
+                }
+                else if (linkTextBox5.Contains("https://"))
+                {
+                    Process.Start(linkTextBox5);
+                    dia.Close();
+                }
+                else if (commandTextBox5.Length > 0)
+                {
+                    Process.Start("cmd.exe", "/c" + commandTextBox5);
+                    dia.Close();
+                }
+
+            }
+
             dia.Cancelable = cancelable;
+
             dia.InstructionText = instructionText;
             dia.DetailsExpanded = false;
             dia.DetailsExpandedText = expandedText;
@@ -513,7 +672,41 @@ namespace Dialog_Creator
             dia.Caption = caption;
             dia.Text = messageText;
             dia.Icon = stanIcon;
-            dia.Controls.Add(customButton);
+            if(showButton1 == true)
+            {
+                dia.Controls.Add(customButton);
+            } else
+            {
+
+            }
+            if(showButton2 == true)
+            {
+                dia.Controls.Add(customButton2);
+            } else
+            {
+
+            }
+            if(showButton3 == true)
+            {
+                dia.Controls.Add(customButton3);
+            } else
+            {
+
+            }
+            if(showButton4 == true)
+            {
+                dia.Controls.Add(customButton4);
+            } else
+            {
+
+            }
+            if(showButton5 == true)
+            {
+                dia.Controls.Add(customButton5);
+            } else
+            {
+
+            }
             dia.DetailsCollapsedLabel = collapsedLabel;
             dia.DetailsExpandedLabel = expandedLabel;
             dia.FooterCheckBoxText = footerCheckboxLabel;
@@ -541,6 +734,7 @@ namespace Dialog_Creator
             TaskDialogStandardButtons stanButton4
         )
         {
+
             TaskDialog dia = new TaskDialog();
 
             dia.Cancelable = cancelable;
@@ -557,9 +751,12 @@ namespace Dialog_Creator
             dia.FooterCheckBoxText = footerCheckboxLabel;
             dia.FooterText = footerLabel;
             dia.FooterIcon = footerIcon;
+
             dia.Show();
         }
 
+
+        // Deactivate/Activate stuff when on different Dialog options
         private void DialogTypeDropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(DialogTypeDropdown.SelectedItem.ToString() == "Basic Dialog Box (Classic Error Message)")
@@ -570,6 +767,9 @@ namespace Dialog_Creator
                 linkText1TextBox.Enabled = false;
                 linkText2TextBox.Enabled = false;
                 basicDialogGroup.Enabled = true;
+                button1OKCheckbox.Checked = false;
+                customButtonsGroup.Enabled = false;
+                elevatedIconCheckbox.Enabled = false;
             } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable. Links Version)")
             {
                 taskDialogGroup.Enabled = true;
@@ -586,6 +786,12 @@ namespace Dialog_Creator
                 linkTaskDialogCustomButtonTextBox.Enabled = false;
                 commandTaskDialogCustomButtonTextBox.Enabled = false;
                 elevatedIconCheckbox.Enabled = true;
+                button1NoneCheckbox.Enabled = true;
+                button2NoneCheckbox.Enabled = true;
+                button3NoneCheckbox.Enabled = true;
+                button4NoneCheckbox.Enabled = true;
+                button1OKCheckbox.Checked = false;
+                customButtonsGroup.Enabled = false;
             } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable. Custom Buttons Version)")
             {
                 taskDialogGroup.Enabled = true;
@@ -601,7 +807,9 @@ namespace Dialog_Creator
                 button2Group.Enabled = false;
                 button3Group.Enabled = false;
                 button4Group.Enabled = false;
-                elevatedIconCheckbox.Enabled = true;
+                button1OKCheckbox.Checked = false;
+                elevatedIconCheckbox.Enabled = false;
+                customButtonsGroup.Enabled = true;
             } else if(DialogTypeDropdown.SelectedItem.ToString() == "Task Dialog Box (More Advanced, and more customizable.)")
             {
                 taskDialogGroup.Enabled = true;
@@ -618,10 +826,16 @@ namespace Dialog_Creator
                 button3Group.Enabled = true;
                 button4Group.Enabled = true;
                 elevatedIconCheckbox.Enabled = false;
+                button1NoneCheckbox.Enabled = false; // I dont know why but Basic Task Dialogs cannot have "No Buttons" so we disable the "None" checkboxes.
+                button2NoneCheckbox.Enabled = false;
+                button3NoneCheckbox.Enabled = false;
+                button4NoneCheckbox.Enabled = false;
+                button1OKCheckbox.Checked = true;
+                customButtonsGroup.Enabled = false;
             }
         }
 
-        // These are checks if 1 box is checked while another is also checked, this is so only 1 can be checked.
+        // These are checks if 1 box is checked while another is also checked, this is so only 1 can be checked. Ignore these.
         private void OKCheckbox_CheckedChanged(object sender, EventArgs e)
         {
             if(OKCheckbox.Checked == true)
@@ -876,6 +1090,8 @@ namespace Dialog_Creator
             }
         }
 
+        // Tooltip stuff
+
         private void aboutDialogCreatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             aboutDialogCreatorToolStripMenuItem.Checked = false;
@@ -890,6 +1106,8 @@ namespace Dialog_Creator
 
             MessageBox.Show("To use 'Link', type in any Website you want (be sure to put in https:// at the beginning!). For 'Command' you need to type in a Command Prompt Command (eg: echo Hello World! & pause). You can only choose one of these (have one empty).");
         }
+
+        // More Checkbox Checks..
 
         private void button1OKCheckbox_CheckedChanged(object sender, EventArgs e)
         {
@@ -1335,6 +1553,14 @@ namespace Dialog_Creator
             }
         }
 
+        private void customButtonDisabledCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        // Saving stuff
+
         private void button2_Click(object sender, EventArgs e)
         {
             bool selectedButtonBasicOK = false;
@@ -1488,6 +1714,28 @@ namespace Dialog_Creator
             string linkText2 = String.Empty;
 
             string customButtonText = String.Empty;
+            string customButton2Text = String.Empty;
+            string customButton3Text = String.Empty;
+            string customButton4Text = String.Empty;
+            string customButton5Text = String.Empty;
+
+            bool customButton1Elevated = false;
+            bool customButton2Elevated = false;
+            bool customButton3Elevated = false;
+            bool customButton4Elevated = false;
+            bool customButton5Elevated = false;
+
+            bool customButton1Show = false;
+            bool customButton2Show = false;
+            bool customButton3Show = false;
+            bool customButton4Show = false;
+            bool customButton5Show = false;
+
+            bool customButton1Disabled = false;
+            bool customButton2Disabled = false;
+            bool customButton3Disabled = false;
+            bool customButton4Disabled = false;
+            bool customButton5Disabled = false;
 
             bool selectedIconGrayShield = false;
             bool selectedIconRedShield = false;
@@ -2318,6 +2566,153 @@ namespace Dialog_Creator
                 {
                     customButtonText = " ";
                 }
+                if (customButton2TextTextBox.Text.Length > 0)
+                {
+                    customButton2Text = customButton2TextTextBox.Text;
+                }
+                else
+                {
+                    customButton2Text = " ";
+                }
+                if (customButton3TextTextBox.Text.Length > 0)
+                {
+                    customButton3Text = customButton3TextTextBox.Text;
+                }
+                else
+                {
+                    customButton3Text = " ";
+                }
+                if (customButton4TextTextBox.Text.Length > 0)
+                {
+                    customButton4Text = customButton4TextTextBox.Text;
+                }
+                else
+                {
+                    customButton4Text = " ";
+                }
+                if (customButton5TextTextBox.Text.Length > 0)
+                {
+                    customButton5Text = customButton5TextTextBox.Text;
+                }
+                else
+                {
+                    customButton5Text = " ";
+                }
+                if(elevatedIconCustomButtonCheckbox.Checked)
+                {
+                    customButton1Elevated = true;
+                } else
+                {
+                    customButton1Elevated = false;
+                }
+                if(elevatedIconCustomButton2Checkbox.Checked)
+                {
+                    customButton2Elevated = true;
+                } else
+                {
+                    customButton2Elevated = false;
+                }
+                if(elevatedIconCustomButton3Checkbox.Checked)
+                {
+                    customButton3Elevated = true;
+                } else
+                {
+                    customButton3Elevated = false;
+                }
+                if(elevatedIconCustomButton4Checkbox.Checked)
+                {
+                    customButton4Elevated = true;
+                } else
+                {
+                    customButton4Elevated = false;
+                }
+                if(elevatedIconCustomButton5Checkbox.Checked)
+                {
+                    customButton5Elevated = true;
+                } else
+                {
+                    customButton5Elevated = false;
+                }
+                if (customButtonShowCheckbox.Checked)
+                {
+                    customButton1Show = true;
+                }
+                else
+                {
+                    customButton1Show = false;
+                }
+                if (customButton2ShowCheckbox.Checked)
+                {
+                    customButton2Show = true;
+                }
+                else
+                {
+                    customButton2Show = false;
+                }
+                if (customButton3ShowCheckbox.Checked)
+                {
+                    customButton3Show = true;
+                }
+                else
+                {
+                    customButton3Show = false;
+                }
+                if (customButton4ShowCheckbox.Checked)
+                {
+                    customButton4Show = true;
+                }
+                else
+                {
+                    customButton4Show = false;
+                }
+                if (customButton5ShowCheckbox.Checked)
+                {
+                    customButton5Show = true;
+                }
+                else
+                {
+                    customButton5Show = false;
+                }
+                if (customButtonDisabledCheckbox.Checked) // mark
+                {
+                    customButton1Disabled = true;
+                }
+                else
+                {
+                    customButton1Disabled = false;
+                }
+                if (customButton2DisabledCheckbox.Checked)
+                {
+                    customButton2Disabled = true;
+                }
+                else
+                {
+                    customButton2Disabled = false;
+                }
+                if (customButton3DisabledCheckbox.Checked)
+                {
+                    customButton3Disabled = true;
+                }
+                else
+                {
+                    customButton3Disabled = false;
+                }
+                if (customButton4DisabledCheckbox.Checked)
+                {
+                    customButton4Disabled = true;
+                }
+                else
+                {
+                    customButton4Disabled = false;
+                }
+                if (customButton5DisabledCheckbox.Checked)
+                {
+                    customButton5Disabled = true;
+                }
+                else
+                {
+                    customButton5Disabled = false;
+                }
                 if (cancelableCheckbox.Checked)
                 {
                     cancelable = true;
@@ -2466,6 +2861,25 @@ namespace Dialog_Creator
                         sw.WriteLine(selectedIconBlueShield);
                         sw.WriteLine(selectedIconYellowShield);
                         sw.WriteLine(selectedIconGreenShield);
+                        sw.WriteLine(customButton2Text);
+                        sw.WriteLine(customButton3Text);
+                        sw.WriteLine(customButton4Text);
+                        sw.WriteLine(customButton5Text);
+                        sw.WriteLine(customButton1Elevated);
+                        sw.WriteLine(customButton2Elevated);
+                        sw.WriteLine(customButton3Elevated);
+                        sw.WriteLine(customButton4Elevated);
+                        sw.WriteLine(customButton5Elevated);
+                        sw.WriteLine(customButton1Show);
+                        sw.WriteLine(customButton2Show);
+                        sw.WriteLine(customButton3Show);
+                        sw.WriteLine(customButton4Show);
+                        sw.WriteLine(customButton5Show);
+                        sw.WriteLine(customButton1Disabled);
+                        sw.WriteLine(customButton2Disabled);
+                        sw.WriteLine(customButton3Disabled);
+                        sw.WriteLine(customButton4Disabled);
+                        sw.WriteLine(customButton5Disabled);
                     }
                 }
                 else
@@ -2502,6 +2916,25 @@ namespace Dialog_Creator
                         sw.WriteLine(selectedIconBlueShield);
                         sw.WriteLine(selectedIconYellowShield);
                         sw.WriteLine(selectedIconGreenShield);
+                        sw.WriteLine(customButton2Text);
+                        sw.WriteLine(customButton3Text);
+                        sw.WriteLine(customButton4Text);
+                        sw.WriteLine(customButton5Text);
+                        sw.WriteLine(customButton1Elevated);
+                        sw.WriteLine(customButton2Elevated);
+                        sw.WriteLine(customButton3Elevated);
+                        sw.WriteLine(customButton4Elevated);
+                        sw.WriteLine(customButton5Elevated);
+                        sw.WriteLine(customButton1Show);
+                        sw.WriteLine(customButton2Show);
+                        sw.WriteLine(customButton3Show);
+                        sw.WriteLine(customButton4Show);
+                        sw.WriteLine(customButton5Show);
+                        sw.WriteLine(customButton1Disabled);
+                        sw.WriteLine(customButton2Disabled);
+                        sw.WriteLine(customButton3Disabled);
+                        sw.WriteLine(customButton4Disabled);
+                        sw.WriteLine(customButton5Disabled);
                     }
                 }
             }
@@ -2548,6 +2981,28 @@ namespace Dialog_Creator
             string linkText2;
 
             string customButtonText;
+            string customButton2Text;
+            string customButton3Text;
+            string customButton4Text;
+            string customButton5Text;
+
+            bool customButton1Elevated;
+            bool customButton2Elevated;
+            bool customButton3Elevated;
+            bool customButton4Elevated;
+            bool customButton5Elevated;
+
+            bool customButton1Show;
+            bool customButton2Show;
+            bool customButton3Show;
+            bool customButton4Show;
+            bool customButton5Show;
+
+            bool customButton1Disabled;
+            bool customButton2Disabled;
+            bool customButton3Disabled;
+            bool customButton4Disabled;
+            bool customButton5Disabled;
 
             bool selectedIconGrayShield;
             bool selectedIconRedShield;
@@ -3033,6 +3488,25 @@ namespace Dialog_Creator
                     selectedIconBlueShield = bool.Parse(exportedFile[26]);
                     selectedIconYellowShield = bool.Parse(exportedFile[27]);
                     selectedIconGreenShield = bool.Parse(exportedFile[28]);
+                    customButton2Text = exportedFile[29];
+                    customButton3Text = exportedFile[30];
+                    customButton4Text = exportedFile[31];
+                    customButton5Text = exportedFile[32];
+                    customButton1Elevated = bool.Parse(exportedFile[33]);
+                    customButton2Elevated = bool.Parse(exportedFile[34]);
+                    customButton3Elevated = bool.Parse(exportedFile[35]);
+                    customButton4Elevated = bool.Parse(exportedFile[36]);
+                    customButton5Elevated = bool.Parse(exportedFile[37]);
+                    customButton1Show = bool.Parse(exportedFile[38]);
+                    customButton2Show = bool.Parse(exportedFile[39]);
+                    customButton3Show = bool.Parse(exportedFile[40]);
+                    customButton4Show = bool.Parse(exportedFile[41]);
+                    customButton5Show = bool.Parse(exportedFile[42]);
+                    customButton1Disabled = bool.Parse(exportedFile[43]);
+                    customButton2Disabled = bool.Parse(exportedFile[44]);
+                    customButton3Disabled = bool.Parse(exportedFile[45]);
+                    customButton4Disabled = bool.Parse(exportedFile[46]);
+                    customButton5Disabled = bool.Parse(exportedFile[47]);
 
                     // Apply the values
                     messageTextTextBox.Text = messageText;
@@ -3082,13 +3556,30 @@ namespace Dialog_Creator
                         footerIconNone.Checked = true;
                     }
                     customButtonTextTextBox.Text = customButtonText;
-
+                    customButton2TextTextBox.Text = customButton2Text;
+                    customButton3TextTextBox.Text = customButton3Text;
+                    customButton4TextTextBox.Text = customButton4Text;
+                    customButton5TextTextBox.Text = customButton5Text;
+                    elevatedIconCustomButtonCheckbox.Checked = customButton1Elevated;
+                    elevatedIconCustomButton2Checkbox.Checked = customButton2Elevated;
+                    elevatedIconCustomButton3Checkbox.Checked = customButton3Elevated;
+                    elevatedIconCustomButton4Checkbox.Checked = customButton4Elevated;
+                    elevatedIconCustomButton5Checkbox.Checked = customButton5Elevated;
+                    customButtonShowCheckbox.Checked = customButton1Show;
+                    customButton2ShowCheckbox.Checked = customButton2Show;
+                    customButton3ShowCheckbox.Checked = customButton3Show;
+                    customButton4ShowCheckbox.Checked = customButton4Show;
+                    customButton5ShowCheckbox.Checked = customButton5Show;
+                    customButtonDisabledCheckbox.Checked = customButton1Disabled;
+                    customButton2DisabledCheckbox.Checked = customButton2Disabled;
+                    customButton3DisabledCheckbox.Checked = customButton3Disabled;
+                    customButton4DisabledCheckbox.Checked = customButton4Disabled;
+                    customButton5DisabledCheckbox.Checked = customButton5Disabled;
 
                 }
 
             }
         }
 
-        
     }
 }

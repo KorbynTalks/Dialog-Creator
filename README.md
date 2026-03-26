@@ -22,4 +22,4 @@ Dialog Creator is inspired by ThioJoes [Modern Windows Message Box Generator](ht
 
 ## How To Build
 First Download the Source Code by clicking [this.](https://github.com/KorbynTalks/Dialog-Creator/archive/refs/heads/main.zip)
-Next open up the project by clicking on "Dialog Creator.sln" **Make sure you have Visual Studio 2019 Installed first.** Lastly, click on "Start".
+Next open up the project by clicking on "Dialog Creator.sln" **Make sure you have Visual Studio 2022 Installed first.** Lastly, click on "Start".

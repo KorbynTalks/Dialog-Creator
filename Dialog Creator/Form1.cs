@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Drawing.Text;
 
 namespace Dialog_Creator
 {
@@ -36,7 +37,15 @@ namespace Dialog_Creator
         // Code that activates as soon as the Application is started
         private void Form1_Load(object sender, EventArgs e)
         {
+            string dialogCreatorVersion;
+            dialogCreatorVersion = Application.ProductVersion.ToString();
+
+            Text = "Dialog Creator (ver: " + dialogCreatorVersion + ")";
+
             DialogTypeDropdown.SelectedItem = "Basic Dialog Box (Classic Error Message)"; // Set the Dropdown to the Classic Dialog Box option
+
+            
+
         }
 
         // Code that activates when the Create button is clicked.
@@ -755,6 +764,51 @@ namespace Dialog_Creator
             dia.Show();
         }
 
+        // CheckboxManager stuff
+
+        CheckboxManager checkboxManager = new CheckboxManager();
+
+        private void basicDialogCheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesBasicDialog = [OKCheckbox, yesNoCheckbox, yesNoCancelCheckbox, OKCancelCheckbox, abortRetryIgnoreCheckbox, retryCancelCheckbox, noneCheckbox];
+
+            checkboxManager.CheckboxManage();
+        }
+
+        private void IconCheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesIcons = [errorCheckbox, informationCheckbox, warningCheckbox, questionCheckbox, noIconCheckbox, ShieldGray, ShieldRed, blueShield, yellowShield, greenShield];
+
+            checkboxManager.CheckboxManage();
+        }
+
+        private void TaskDialogButton1CheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesTaskDialogButton1 = [button1OKCheckbox, button1YesCheckbox, button1NoCheckbox, button1CancelCheckbox, button1CloseCheckbox, button1RetryCheckbox, button1NoneCheckbox];
+
+            checkboxManager.CheckboxManage();
+        }
+
+        private void TaskDialogButton2CheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesTaskDialogButton2 = [button2OKCheckbox, button2YesCheckbox, button2NoCheckbox, button2CancelCheckbox, button2CloseCheckbox, button2RetryCheckbox, button2NoneCheckbox];
+
+            checkboxManager.CheckboxManage();
+        }
+
+        private void TaskDialogButton3CheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesTaskDialogButton3 = [button3OKCheckbox, button3YesCheckbox, button3NoCheckbox, button3CancelCheckbox, button3CloseCheckbox, button3RetryCheckbox, button3NoneCheckbox];
+
+            checkboxManager.CheckboxManage();
+        }
+
+        private void TaskDialogButton4CheckboxesChanged(object sender, EventArgs e)
+        {
+            checkboxManager.checkBoxesTaskDialogButton4 = [button4OKCheckbox, button4YesCheckbox, button4NoCheckbox, button4CancelCheckbox, button4CloseCheckbox, button4RetryCheckbox, button4NoneCheckbox];
+
+            checkboxManager.CheckboxManage();
+        }
 
         // Deactivate/Activate stuff when on different Dialog options
         private void DialogTypeDropdown_SelectedIndexChanged(object sender, EventArgs e)
@@ -835,261 +889,6 @@ namespace Dialog_Creator
             }
         }
 
-        // These are checks if 1 box is checked while another is also checked, this is so only 1 can be checked. Ignore these.
-        private void OKCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if(OKCheckbox.Checked == true)
-            {
-                yesNoCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-            
-        }
-
-        private void yesNoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (yesNoCheckbox.Checked == true)
-            {
-                OKCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-        }
-
-        private void yesNoCancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (yesNoCancelCheckbox.Checked == true)
-            {
-                yesNoCheckbox.Checked = false;
-                OKCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-        }
-
-        private void OKCancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (OKCancelCheckbox.Checked == true)
-            {
-                OKCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                yesNoCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-        }
-
-        private void abortRetryIgnoreCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (abortRetryIgnoreCheckbox.Checked == true)
-            {
-                OKCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                yesNoCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-        }
-
-        private void retryCancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (retryCancelCheckbox.Checked == true)
-            {
-                OKCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                yesNoCheckbox.Checked = false;
-                noneCheckbox.Checked = false;
-            }
-        }
-
-        private void noneCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (noneCheckbox.Checked == true)
-            {
-                OKCheckbox.Checked = false;
-                yesNoCancelCheckbox.Checked = false;
-                OKCancelCheckbox.Checked = false;
-                abortRetryIgnoreCheckbox.Checked = false;
-                yesNoCheckbox.Checked = false;
-                retryCancelCheckbox.Checked = false;
-            }
-        }
-
-        private void errorCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (errorCheckbox.Checked == true)
-            {
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-                ShieldGray.Checked = false;
-            }
-        }
-
-        private void informationCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (informationCheckbox.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-                ShieldGray.Checked = false;
-            }
-        }
-
-        private void warningCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (warningCheckbox.Checked == true)
-            {
-                informationCheckbox.Checked = false;
-                errorCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-                ShieldGray.Checked = false;
-            }
-        }
-
-        private void questionCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (questionCheckbox.Checked == true)
-            {
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                errorCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-                ShieldGray.Checked = false;
-            }
-        }
-
-        private void noIconCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (noIconCheckbox.Checked == true)
-            {
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                errorCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-                ShieldGray.Checked = false;
-            }
-        }
-
-        private void expmdeShowFooterCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (expmdeShowFooterCheckbox.Checked == true)
-            {
-                expmdeShowContentCheckbox.Checked = false;
-                expmdeHideCheckbox.Checked = false;
-            }
-        }
-
-        private void expmdeShowContentCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (expmdeShowContentCheckbox.Checked == true)
-            {
-                expmdeShowFooterCheckbox.Checked = false;
-                expmdeHideCheckbox.Checked = false;
-            }
-        }
-
-        private void expmdeHideCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (expmdeHideCheckbox.Checked == true)
-            {
-                expmdeShowContentCheckbox.Checked = false;
-                expmdeShowFooterCheckbox.Checked = false;
-            }
-        }
-
-        private void footerIconError_CheckedChanged(object sender, EventArgs e)
-        {
-            if(footerIconError.Checked == true)
-            {
-                footerIconInfo.Checked = false;
-                footerIconWarning.Checked = false;
-                footerIconQuestion.Checked = false;
-                footerIconNone.Checked = false;
-            }
-        }
-
-        private void footerIconInfo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (footerIconInfo.Checked == true)
-            {
-                footerIconError.Checked = false;
-                footerIconWarning.Checked = false;
-                footerIconQuestion.Checked = false;
-                footerIconNone.Checked = false;
-            }
-        }
-
-        private void footerIconWarning_CheckedChanged(object sender, EventArgs e)
-        {
-            if (footerIconWarning.Checked == true)
-            {
-                footerIconInfo.Checked = false;
-                footerIconError.Checked = false;
-                footerIconQuestion.Checked = false;
-                footerIconNone.Checked = false;
-            }
-        }
-
-        private void footerIconQuestion_CheckedChanged(object sender, EventArgs e)
-        {
-            if (footerIconQuestion.Checked == true)
-            {
-                footerIconInfo.Checked = false;
-                footerIconWarning.Checked = false;
-                footerIconError.Checked = false;
-                footerIconNone.Checked = false;
-            }
-        }
-
-        private void footerIconNone_CheckedChanged(object sender, EventArgs e)
-        {
-            if (footerIconNone.Checked == true)
-            {
-                footerIconInfo.Checked = false;
-                footerIconWarning.Checked = false;
-                footerIconQuestion.Checked = false;
-                footerIconError.Checked = false;
-            }
-        }
-
         // Tooltip stuff
 
         private void aboutDialogCreatorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1107,459 +906,7 @@ namespace Dialog_Creator
             MessageBox.Show("To use 'Link', type in any Website you want (be sure to put in https:// at the beginning!). For 'Command' you need to type in a Command Prompt Command (eg: echo Hello World! & pause). You can only choose one of these (have one empty).");
         }
 
-        // More Checkbox Checks..
-
-        private void button1OKCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if(button1OKCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1YesCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1YesCheckbox.Checked == true)
-            {
-                button1OKCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1NoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1NoCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1OKCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1CancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1CancelCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1OKCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1CloseCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1CloseCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1OKCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1RetryCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1RetryCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1OKCheckbox.Checked = false;
-                button1NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button1NoneCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button1NoneCheckbox.Checked == true)
-            {
-                button1YesCheckbox.Checked = false;
-                button1NoCheckbox.Checked = false;
-                button1CancelCheckbox.Checked = false;
-                button1CloseCheckbox.Checked = false;
-                button1RetryCheckbox.Checked = false;
-                button1OKCheckbox.Checked = false;
-            }
-        }
-
-        private void button2OKCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2OKCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2YesCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2YesCheckbox.Checked == true)
-            {
-                button2OKCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2NoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2NoCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2OKCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2CancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2CancelCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2OKCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2CloseCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2CloseCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2OKCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2RetryCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2RetryCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2OKCheckbox.Checked = false;
-                button2NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button2NoneCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button2NoneCheckbox.Checked == true)
-            {
-                button2YesCheckbox.Checked = false;
-                button2NoCheckbox.Checked = false;
-                button2CancelCheckbox.Checked = false;
-                button2CloseCheckbox.Checked = false;
-                button2RetryCheckbox.Checked = false;
-                button2OKCheckbox.Checked = false;
-            }
-        }
-
-        private void button3OKCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3OKCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3YesCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3YesCheckbox.Checked == true)
-            {
-                button3OKCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3NoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3NoCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3OKCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3CancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3CancelCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3OKCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3CloseCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3CloseCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3OKCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3RetryCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3RetryCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3OKCheckbox.Checked = false;
-                button3NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button3NoneCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button3NoneCheckbox.Checked == true)
-            {
-                button3YesCheckbox.Checked = false;
-                button3NoCheckbox.Checked = false;
-                button3CancelCheckbox.Checked = false;
-                button3CloseCheckbox.Checked = false;
-                button3RetryCheckbox.Checked = false;
-                button3OKCheckbox.Checked = false;
-            }
-        }
-
-        private void button4OKCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4OKCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4YesCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4YesCheckbox.Checked == true)
-            {
-                button4OKCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4NoCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4NoCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4OKCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4CancelCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4CancelCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4OKCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4CloseCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4CloseCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4OKCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4RetryCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4RetryCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4OKCheckbox.Checked = false;
-                button4NoneCheckbox.Checked = false;
-            }
-        }
-
-        private void button4NoneCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (button4NoneCheckbox.Checked == true)
-            {
-                button4YesCheckbox.Checked = false;
-                button4NoCheckbox.Checked = false;
-                button4CancelCheckbox.Checked = false;
-                button4CloseCheckbox.Checked = false;
-                button4RetryCheckbox.Checked = false;
-                button4OKCheckbox.Checked = false;
-            }
-        }
-
-        private void ShieldGray_CheckedChanged(object sender, EventArgs e)
-        {
-            if(ShieldGray.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-            }
-        }
-
-        private void ShieldRed_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ShieldRed.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldGray.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-            }
-        }
-
-        private void blueShield_CheckedChanged(object sender, EventArgs e)
-        {
-            if (blueShield.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldGray.Checked = false;
-                ShieldRed.Checked = false;
-                yellowShield.Checked = false;
-                greenShield.Checked = false;
-            }
-        }
-
-        private void yellowShield_CheckedChanged(object sender, EventArgs e)
-        {
-            if (yellowShield.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldGray.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                greenShield.Checked = false;
-            }
-        }
-
-        private void greenShield_CheckedChanged(object sender, EventArgs e)
-        {
-            if (greenShield.Checked == true)
-            {
-                errorCheckbox.Checked = false;
-                informationCheckbox.Checked = false;
-                warningCheckbox.Checked = false;
-                questionCheckbox.Checked = false;
-                noIconCheckbox.Checked = false;
-                ShieldGray.Checked = false;
-                ShieldRed.Checked = false;
-                blueShield.Checked = false;
-                yellowShield.Checked = false;
-            }
-        }
-
-        private void customButtonDisabledCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        // Saving stuff
+        // Saving System. Will absolutely revamp when I have the time. Filled with way too many if statements, and would be nice to have in a seperate script.
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -3580,6 +2927,5 @@ namespace Dialog_Creator
 
             }
         }
-
     }
 }

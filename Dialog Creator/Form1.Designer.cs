@@ -202,7 +202,6 @@ namespace Dialog_Creator
             this.footerIconNone.TabIndex = 4;
             this.footerIconNone.Text = "None";
             this.footerIconNone.UseVisualStyleBackColor = true;
-            this.footerIconNone.CheckedChanged += new System.EventHandler(this.footerIconNone_CheckedChanged);
             // 
             // footerIconQuestion
             // 
@@ -213,7 +212,6 @@ namespace Dialog_Creator
             this.footerIconQuestion.TabIndex = 3;
             this.footerIconQuestion.Text = "UAC Shield";
             this.footerIconQuestion.UseVisualStyleBackColor = true;
-            this.footerIconQuestion.CheckedChanged += new System.EventHandler(this.footerIconQuestion_CheckedChanged);
             // 
             // footerIconWarning
             // 
@@ -224,7 +222,6 @@ namespace Dialog_Creator
             this.footerIconWarning.TabIndex = 2;
             this.footerIconWarning.Text = "Warning/Exclamation";
             this.footerIconWarning.UseVisualStyleBackColor = true;
-            this.footerIconWarning.CheckedChanged += new System.EventHandler(this.footerIconWarning_CheckedChanged);
             // 
             // footerIconInfo
             // 
@@ -235,7 +232,6 @@ namespace Dialog_Creator
             this.footerIconInfo.TabIndex = 1;
             this.footerIconInfo.Text = "Information";
             this.footerIconInfo.UseVisualStyleBackColor = true;
-            this.footerIconInfo.CheckedChanged += new System.EventHandler(this.footerIconInfo_CheckedChanged);
             // 
             // footerIconError
             // 
@@ -246,7 +242,6 @@ namespace Dialog_Creator
             this.footerIconError.TabIndex = 0;
             this.footerIconError.Text = "Error";
             this.footerIconError.UseVisualStyleBackColor = true;
-            this.footerIconError.CheckedChanged += new System.EventHandler(this.footerIconError_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -299,7 +294,7 @@ namespace Dialog_Creator
             this.noIconCheckbox.TabIndex = 4;
             this.noIconCheckbox.Text = "None";
             this.noIconCheckbox.UseVisualStyleBackColor = true;
-            this.noIconCheckbox.CheckedChanged += new System.EventHandler(this.noIconCheckbox_CheckedChanged);
+            this.noIconCheckbox.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // questionCheckbox
             // 
@@ -310,7 +305,7 @@ namespace Dialog_Creator
             this.questionCheckbox.TabIndex = 3;
             this.questionCheckbox.Text = "Question (UAC Shield for Task Dialog)";
             this.questionCheckbox.UseVisualStyleBackColor = true;
-            this.questionCheckbox.CheckedChanged += new System.EventHandler(this.questionCheckbox_CheckedChanged);
+            this.questionCheckbox.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // warningCheckbox
             // 
@@ -321,7 +316,7 @@ namespace Dialog_Creator
             this.warningCheckbox.TabIndex = 2;
             this.warningCheckbox.Text = "Warning/Exclamation";
             this.warningCheckbox.UseVisualStyleBackColor = true;
-            this.warningCheckbox.CheckedChanged += new System.EventHandler(this.warningCheckbox_CheckedChanged);
+            this.warningCheckbox.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // informationCheckbox
             // 
@@ -332,7 +327,7 @@ namespace Dialog_Creator
             this.informationCheckbox.TabIndex = 1;
             this.informationCheckbox.Text = "Information";
             this.informationCheckbox.UseVisualStyleBackColor = true;
-            this.informationCheckbox.CheckedChanged += new System.EventHandler(this.informationCheckbox_CheckedChanged);
+            this.informationCheckbox.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // errorCheckbox
             // 
@@ -343,7 +338,7 @@ namespace Dialog_Creator
             this.errorCheckbox.TabIndex = 0;
             this.errorCheckbox.Text = "Error";
             this.errorCheckbox.UseVisualStyleBackColor = true;
-            this.errorCheckbox.CheckedChanged += new System.EventHandler(this.errorCheckbox_CheckedChanged);
+            this.errorCheckbox.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // websiteLinkTextBox
             // 
@@ -470,7 +465,7 @@ namespace Dialog_Creator
             this.noneCheckbox.TabIndex = 6;
             this.noneCheckbox.Text = "None";
             this.noneCheckbox.UseVisualStyleBackColor = true;
-            this.noneCheckbox.CheckedChanged += new System.EventHandler(this.noneCheckbox_CheckedChanged);
+            this.noneCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // retryCancelCheckbox
             // 
@@ -481,7 +476,7 @@ namespace Dialog_Creator
             this.retryCancelCheckbox.TabIndex = 5;
             this.retryCancelCheckbox.Text = "Retry + Cancel";
             this.retryCancelCheckbox.UseVisualStyleBackColor = true;
-            this.retryCancelCheckbox.CheckedChanged += new System.EventHandler(this.retryCancelCheckbox_CheckedChanged);
+            this.retryCancelCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // abortRetryIgnoreCheckbox
             // 
@@ -492,7 +487,7 @@ namespace Dialog_Creator
             this.abortRetryIgnoreCheckbox.TabIndex = 4;
             this.abortRetryIgnoreCheckbox.Text = "Abort + Retry + Ignore";
             this.abortRetryIgnoreCheckbox.UseVisualStyleBackColor = true;
-            this.abortRetryIgnoreCheckbox.CheckedChanged += new System.EventHandler(this.abortRetryIgnoreCheckbox_CheckedChanged);
+            this.abortRetryIgnoreCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // OKCancelCheckbox
             // 
@@ -503,7 +498,7 @@ namespace Dialog_Creator
             this.OKCancelCheckbox.TabIndex = 3;
             this.OKCancelCheckbox.Text = "OK + Cancel";
             this.OKCancelCheckbox.UseVisualStyleBackColor = true;
-            this.OKCancelCheckbox.CheckedChanged += new System.EventHandler(this.OKCancelCheckbox_CheckedChanged);
+            this.OKCancelCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // yesNoCancelCheckbox
             // 
@@ -514,7 +509,7 @@ namespace Dialog_Creator
             this.yesNoCancelCheckbox.TabIndex = 2;
             this.yesNoCancelCheckbox.Text = "Yes + No + Cancel";
             this.yesNoCancelCheckbox.UseVisualStyleBackColor = true;
-            this.yesNoCancelCheckbox.CheckedChanged += new System.EventHandler(this.yesNoCancelCheckbox_CheckedChanged);
+            this.yesNoCancelCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // yesNoCheckbox
             // 
@@ -525,7 +520,7 @@ namespace Dialog_Creator
             this.yesNoCheckbox.TabIndex = 1;
             this.yesNoCheckbox.Text = "Yes + No";
             this.yesNoCheckbox.UseVisualStyleBackColor = true;
-            this.yesNoCheckbox.CheckedChanged += new System.EventHandler(this.yesNoCheckbox_CheckedChanged);
+            this.yesNoCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // OKCheckbox
             // 
@@ -536,7 +531,7 @@ namespace Dialog_Creator
             this.OKCheckbox.TabIndex = 0;
             this.OKCheckbox.Text = "OK";
             this.OKCheckbox.UseVisualStyleBackColor = true;
-            this.OKCheckbox.CheckedChanged += new System.EventHandler(this.OKCheckbox_CheckedChanged);
+            this.OKCheckbox.CheckedChanged += new System.EventHandler(this.basicDialogCheckboxesChanged);
             // 
             // MainContextMenu
             // 
@@ -621,7 +616,6 @@ namespace Dialog_Creator
             this.expmdeHideCheckbox.TabIndex = 14;
             this.expmdeHideCheckbox.Text = "Hide";
             this.expmdeHideCheckbox.UseVisualStyleBackColor = true;
-            this.expmdeHideCheckbox.CheckedChanged += new System.EventHandler(this.expmdeHideCheckbox_CheckedChanged);
             // 
             // expmdeShowFooterCheckbox
             // 
@@ -632,7 +626,6 @@ namespace Dialog_Creator
             this.expmdeShowFooterCheckbox.TabIndex = 12;
             this.expmdeShowFooterCheckbox.Text = "Expand Footer";
             this.expmdeShowFooterCheckbox.UseVisualStyleBackColor = true;
-            this.expmdeShowFooterCheckbox.CheckedChanged += new System.EventHandler(this.expmdeShowFooterCheckbox_CheckedChanged);
             // 
             // expmdeShowContentCheckbox
             // 
@@ -643,7 +636,6 @@ namespace Dialog_Creator
             this.expmdeShowContentCheckbox.TabIndex = 13;
             this.expmdeShowContentCheckbox.Text = "Expand Content";
             this.expmdeShowContentCheckbox.UseVisualStyleBackColor = true;
-            this.expmdeShowContentCheckbox.CheckedChanged += new System.EventHandler(this.expmdeShowContentCheckbox_CheckedChanged);
             // 
             // cancelableCheckbox
             // 
@@ -1072,7 +1064,7 @@ namespace Dialog_Creator
             this.greenShield.TabIndex = 9;
             this.greenShield.Text = "Green";
             this.greenShield.UseVisualStyleBackColor = true;
-            this.greenShield.CheckedChanged += new System.EventHandler(this.greenShield_CheckedChanged);
+            this.greenShield.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // yellowShield
             // 
@@ -1083,7 +1075,7 @@ namespace Dialog_Creator
             this.yellowShield.TabIndex = 8;
             this.yellowShield.Text = "Yellow";
             this.yellowShield.UseVisualStyleBackColor = true;
-            this.yellowShield.CheckedChanged += new System.EventHandler(this.yellowShield_CheckedChanged);
+            this.yellowShield.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // blueShield
             // 
@@ -1094,7 +1086,7 @@ namespace Dialog_Creator
             this.blueShield.TabIndex = 7;
             this.blueShield.Text = "Blue";
             this.blueShield.UseVisualStyleBackColor = true;
-            this.blueShield.CheckedChanged += new System.EventHandler(this.blueShield_CheckedChanged);
+            this.blueShield.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // ShieldRed
             // 
@@ -1105,7 +1097,7 @@ namespace Dialog_Creator
             this.ShieldRed.TabIndex = 6;
             this.ShieldRed.Text = "Red";
             this.ShieldRed.UseVisualStyleBackColor = true;
-            this.ShieldRed.CheckedChanged += new System.EventHandler(this.ShieldRed_CheckedChanged);
+            this.ShieldRed.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // ShieldGray
             // 
@@ -1116,7 +1108,7 @@ namespace Dialog_Creator
             this.ShieldGray.TabIndex = 5;
             this.ShieldGray.Text = "Gray";
             this.ShieldGray.UseVisualStyleBackColor = true;
-            this.ShieldGray.CheckedChanged += new System.EventHandler(this.ShieldGray_CheckedChanged);
+            this.ShieldGray.CheckedChanged += new System.EventHandler(this.IconCheckboxesChanged);
             // 
             // groupBox8
             // 
@@ -1212,7 +1204,7 @@ namespace Dialog_Creator
             this.button4NoneCheckbox.TabIndex = 6;
             this.button4NoneCheckbox.Text = "None";
             this.button4NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button4NoneCheckbox.CheckedChanged += new System.EventHandler(this.button4NoneCheckbox_CheckedChanged);
+            this.button4NoneCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4RetryCheckbox
             // 
@@ -1223,7 +1215,7 @@ namespace Dialog_Creator
             this.button4RetryCheckbox.TabIndex = 5;
             this.button4RetryCheckbox.Text = "Retry";
             this.button4RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button4RetryCheckbox.CheckedChanged += new System.EventHandler(this.button4RetryCheckbox_CheckedChanged);
+            this.button4RetryCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4CloseCheckbox
             // 
@@ -1234,7 +1226,7 @@ namespace Dialog_Creator
             this.button4CloseCheckbox.TabIndex = 4;
             this.button4CloseCheckbox.Text = "Close";
             this.button4CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button4CloseCheckbox.CheckedChanged += new System.EventHandler(this.button4CloseCheckbox_CheckedChanged);
+            this.button4CloseCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4CancelCheckbox
             // 
@@ -1245,7 +1237,7 @@ namespace Dialog_Creator
             this.button4CancelCheckbox.TabIndex = 3;
             this.button4CancelCheckbox.Text = "Cancel";
             this.button4CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button4CancelCheckbox.CheckedChanged += new System.EventHandler(this.button4CancelCheckbox_CheckedChanged);
+            this.button4CancelCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4NoCheckbox
             // 
@@ -1256,7 +1248,7 @@ namespace Dialog_Creator
             this.button4NoCheckbox.TabIndex = 2;
             this.button4NoCheckbox.Text = "No";
             this.button4NoCheckbox.UseVisualStyleBackColor = true;
-            this.button4NoCheckbox.CheckedChanged += new System.EventHandler(this.button4NoCheckbox_CheckedChanged);
+            this.button4NoCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4YesCheckbox
             // 
@@ -1267,7 +1259,7 @@ namespace Dialog_Creator
             this.button4YesCheckbox.TabIndex = 1;
             this.button4YesCheckbox.Text = "Yes";
             this.button4YesCheckbox.UseVisualStyleBackColor = true;
-            this.button4YesCheckbox.CheckedChanged += new System.EventHandler(this.button4YesCheckbox_CheckedChanged);
+            this.button4YesCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4OKCheckbox
             // 
@@ -1278,7 +1270,7 @@ namespace Dialog_Creator
             this.button4OKCheckbox.TabIndex = 0;
             this.button4OKCheckbox.Text = "OK";
             this.button4OKCheckbox.UseVisualStyleBackColor = true;
-            this.button4OKCheckbox.CheckedChanged += new System.EventHandler(this.button4OKCheckbox_CheckedChanged);
+            this.button4OKCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton4CheckboxesChanged);
             // 
             // button4Group
             // 
@@ -1345,7 +1337,7 @@ namespace Dialog_Creator
             this.button3NoneCheckbox.TabIndex = 6;
             this.button3NoneCheckbox.Text = "None";
             this.button3NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button3NoneCheckbox.CheckedChanged += new System.EventHandler(this.button3NoneCheckbox_CheckedChanged);
+            this.button3NoneCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3RetryCheckbox
             // 
@@ -1356,7 +1348,7 @@ namespace Dialog_Creator
             this.button3RetryCheckbox.TabIndex = 5;
             this.button3RetryCheckbox.Text = "Retry";
             this.button3RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button3RetryCheckbox.CheckedChanged += new System.EventHandler(this.button3RetryCheckbox_CheckedChanged);
+            this.button3RetryCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3CloseCheckbox
             // 
@@ -1367,7 +1359,7 @@ namespace Dialog_Creator
             this.button3CloseCheckbox.TabIndex = 4;
             this.button3CloseCheckbox.Text = "Close";
             this.button3CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button3CloseCheckbox.CheckedChanged += new System.EventHandler(this.button3CloseCheckbox_CheckedChanged);
+            this.button3CloseCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3CancelCheckbox
             // 
@@ -1378,7 +1370,7 @@ namespace Dialog_Creator
             this.button3CancelCheckbox.TabIndex = 3;
             this.button3CancelCheckbox.Text = "Cancel";
             this.button3CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button3CancelCheckbox.CheckedChanged += new System.EventHandler(this.button3CancelCheckbox_CheckedChanged);
+            this.button3CancelCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3NoCheckbox
             // 
@@ -1389,7 +1381,7 @@ namespace Dialog_Creator
             this.button3NoCheckbox.TabIndex = 2;
             this.button3NoCheckbox.Text = "No";
             this.button3NoCheckbox.UseVisualStyleBackColor = true;
-            this.button3NoCheckbox.CheckedChanged += new System.EventHandler(this.button3NoCheckbox_CheckedChanged);
+            this.button3NoCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3YesCheckbox
             // 
@@ -1400,7 +1392,7 @@ namespace Dialog_Creator
             this.button3YesCheckbox.TabIndex = 1;
             this.button3YesCheckbox.Text = "Yes";
             this.button3YesCheckbox.UseVisualStyleBackColor = true;
-            this.button3YesCheckbox.CheckedChanged += new System.EventHandler(this.button3YesCheckbox_CheckedChanged);
+            this.button3YesCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button3OKCheckbox
             // 
@@ -1411,7 +1403,7 @@ namespace Dialog_Creator
             this.button3OKCheckbox.TabIndex = 0;
             this.button3OKCheckbox.Text = "OK";
             this.button3OKCheckbox.UseVisualStyleBackColor = true;
-            this.button3OKCheckbox.CheckedChanged += new System.EventHandler(this.button3OKCheckbox_CheckedChanged);
+            this.button3OKCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton3CheckboxesChanged);
             // 
             // button2Group
             // 
@@ -1438,7 +1430,7 @@ namespace Dialog_Creator
             this.button2NoneCheckbox.TabIndex = 6;
             this.button2NoneCheckbox.Text = "None";
             this.button2NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button2NoneCheckbox.CheckedChanged += new System.EventHandler(this.button2NoneCheckbox_CheckedChanged);
+            this.button2NoneCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2RetryCheckbox
             // 
@@ -1449,7 +1441,7 @@ namespace Dialog_Creator
             this.button2RetryCheckbox.TabIndex = 5;
             this.button2RetryCheckbox.Text = "Retry";
             this.button2RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button2RetryCheckbox.CheckedChanged += new System.EventHandler(this.button2RetryCheckbox_CheckedChanged);
+            this.button2RetryCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2CloseCheckbox
             // 
@@ -1460,7 +1452,7 @@ namespace Dialog_Creator
             this.button2CloseCheckbox.TabIndex = 4;
             this.button2CloseCheckbox.Text = "Close";
             this.button2CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button2CloseCheckbox.CheckedChanged += new System.EventHandler(this.button2CloseCheckbox_CheckedChanged);
+            this.button2CloseCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2CancelCheckbox
             // 
@@ -1471,7 +1463,7 @@ namespace Dialog_Creator
             this.button2CancelCheckbox.TabIndex = 3;
             this.button2CancelCheckbox.Text = "Cancel";
             this.button2CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button2CancelCheckbox.CheckedChanged += new System.EventHandler(this.button2CancelCheckbox_CheckedChanged);
+            this.button2CancelCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2NoCheckbox
             // 
@@ -1482,7 +1474,7 @@ namespace Dialog_Creator
             this.button2NoCheckbox.TabIndex = 2;
             this.button2NoCheckbox.Text = "No";
             this.button2NoCheckbox.UseVisualStyleBackColor = true;
-            this.button2NoCheckbox.CheckedChanged += new System.EventHandler(this.button2NoCheckbox_CheckedChanged);
+            this.button2NoCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2YesCheckbox
             // 
@@ -1493,7 +1485,7 @@ namespace Dialog_Creator
             this.button2YesCheckbox.TabIndex = 1;
             this.button2YesCheckbox.Text = "Yes";
             this.button2YesCheckbox.UseVisualStyleBackColor = true;
-            this.button2YesCheckbox.CheckedChanged += new System.EventHandler(this.button2YesCheckbox_CheckedChanged);
+            this.button2YesCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button2OKCheckbox
             // 
@@ -1504,7 +1496,7 @@ namespace Dialog_Creator
             this.button2OKCheckbox.TabIndex = 0;
             this.button2OKCheckbox.Text = "OK";
             this.button2OKCheckbox.UseVisualStyleBackColor = true;
-            this.button2OKCheckbox.CheckedChanged += new System.EventHandler(this.button2OKCheckbox_CheckedChanged);
+            this.button2OKCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton2CheckboxesChanged);
             // 
             // button1Group
             // 
@@ -1531,7 +1523,7 @@ namespace Dialog_Creator
             this.button1NoneCheckbox.TabIndex = 6;
             this.button1NoneCheckbox.Text = "None";
             this.button1NoneCheckbox.UseVisualStyleBackColor = true;
-            this.button1NoneCheckbox.CheckedChanged += new System.EventHandler(this.button1NoneCheckbox_CheckedChanged);
+            this.button1NoneCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1RetryCheckbox
             // 
@@ -1542,7 +1534,7 @@ namespace Dialog_Creator
             this.button1RetryCheckbox.TabIndex = 5;
             this.button1RetryCheckbox.Text = "Retry";
             this.button1RetryCheckbox.UseVisualStyleBackColor = true;
-            this.button1RetryCheckbox.CheckedChanged += new System.EventHandler(this.button1RetryCheckbox_CheckedChanged);
+            this.button1RetryCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1CloseCheckbox
             // 
@@ -1553,7 +1545,7 @@ namespace Dialog_Creator
             this.button1CloseCheckbox.TabIndex = 4;
             this.button1CloseCheckbox.Text = "Close";
             this.button1CloseCheckbox.UseVisualStyleBackColor = true;
-            this.button1CloseCheckbox.CheckedChanged += new System.EventHandler(this.button1CloseCheckbox_CheckedChanged);
+            this.button1CloseCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1CancelCheckbox
             // 
@@ -1564,7 +1556,7 @@ namespace Dialog_Creator
             this.button1CancelCheckbox.TabIndex = 3;
             this.button1CancelCheckbox.Text = "Cancel";
             this.button1CancelCheckbox.UseVisualStyleBackColor = true;
-            this.button1CancelCheckbox.CheckedChanged += new System.EventHandler(this.button1CancelCheckbox_CheckedChanged);
+            this.button1CancelCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1NoCheckbox
             // 
@@ -1575,7 +1567,7 @@ namespace Dialog_Creator
             this.button1NoCheckbox.TabIndex = 2;
             this.button1NoCheckbox.Text = "No";
             this.button1NoCheckbox.UseVisualStyleBackColor = true;
-            this.button1NoCheckbox.CheckedChanged += new System.EventHandler(this.button1NoCheckbox_CheckedChanged);
+            this.button1NoCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1YesCheckbox
             // 
@@ -1586,7 +1578,7 @@ namespace Dialog_Creator
             this.button1YesCheckbox.TabIndex = 1;
             this.button1YesCheckbox.Text = "Yes";
             this.button1YesCheckbox.UseVisualStyleBackColor = true;
-            this.button1YesCheckbox.CheckedChanged += new System.EventHandler(this.button1YesCheckbox_CheckedChanged);
+            this.button1YesCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // button1OKCheckbox
             // 
@@ -1597,7 +1589,7 @@ namespace Dialog_Creator
             this.button1OKCheckbox.TabIndex = 0;
             this.button1OKCheckbox.Text = "OK";
             this.button1OKCheckbox.UseVisualStyleBackColor = true;
-            this.button1OKCheckbox.CheckedChanged += new System.EventHandler(this.button1OKCheckbox_CheckedChanged);
+            this.button1OKCheckbox.CheckedChanged += new System.EventHandler(this.TaskDialogButton1CheckboxesChanged);
             // 
             // captionTextTextBox
             // 
@@ -1634,7 +1626,7 @@ namespace Dialog_Creator
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Dialog Creator (ver: 1.2.0)";
+            this.Text = "Dialog Creator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
